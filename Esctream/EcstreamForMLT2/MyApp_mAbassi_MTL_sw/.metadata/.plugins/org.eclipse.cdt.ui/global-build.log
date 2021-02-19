@@ -1,0 +1,432 @@
+19:24:05 **** Incremental Build of configuration Default for project MyApp_MTL2 ****
+make all 
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../src/Main_mAbassi.c -o Main_mAbassi.o
+../src/Main_mAbassi.c: In function 'main':
+../src/Main_mAbassi.c:38:13: warning: unused variable 'ACPwrt' [-Wunused-variable]
+ uint32_t    ACPwrt;
+             ^~~~~~
+../src/Main_mAbassi.c:37:13: warning: unused variable 'ACPrd' [-Wunused-variable]
+ uint32_t    ACPrd;
+             ^~~~~
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../src/MyApp_MTL2.c -o MyApp_MTL2.o
+../src/MyApp_MTL2.c: In function 'Task_MTL2':
+../src/MyApp_MTL2.c:41:19: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+     myFrameBuffer = 0x20000000;
+                   ^
+../src/MyApp_MTL2.c:52:5: warning: implicit declaration of function 'oc_i2c_init' [-Wimplicit-function-declaration]
+     oc_i2c_init(fpga_i2c);
+     ^~~~~~~~~~~
+../src/MyApp_MTL2.c:53:25: warning: passing argument 1 of 'MTC2_Init' makes integer from pointer without a cast [-Wint-conversion]
+     myTouch = MTC2_Init(fpga_i2c, fpga_mtc2, LCD_TOUCH_INT_IRQ);
+                         ^~~~~~~~
+In file included from ../painter/gui.h:5:0,
+                 from ../src/MyApp_MTL2.c:22:
+../painter/terasic_lib/multi_touch2.h:41:12: note: expected 'uint32_t {aka long unsigned int}' but argument is of type 'void *'
+ MTC2_INFO* MTC2_Init(alt_u32 TOUCH_I2C_BASE,alt_u32 TOUCH_INT_BASE, alt_u32 INT_IRQ_NUM);
+            ^~~~~~~~~
+../src/MyApp_MTL2.c:53:35: warning: passing argument 2 of 'MTC2_Init' makes integer from pointer without a cast [-Wint-conversion]
+     myTouch = MTC2_Init(fpga_i2c, fpga_mtc2, LCD_TOUCH_INT_IRQ);
+                                   ^~~~~~~~~
+In file included from ../painter/gui.h:5:0,
+                 from ../src/MyApp_MTL2.c:22:
+../painter/terasic_lib/multi_touch2.h:41:12: note: expected 'uint32_t {aka long unsigned int}' but argument is of type 'void *'
+ MTC2_INFO* MTC2_Init(alt_u32 TOUCH_I2C_BASE,alt_u32 TOUCH_INT_BASE, alt_u32 INT_IRQ_NUM);
+            ^~~~~~~~~
+../src/MyApp_MTL2.c: In function 'Task_DisplayFile':
+../src/MyApp_MTL2.c:138:27: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             myFrameBuffer = 0x20000000;
+                           ^
+../src/MyApp_MTL2.c:154:27: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+             myFrameBuffer = 0x20000000;
+                           ^
+../src/MyApp_MTL2.c:124:15: warning: unused variable 'pixel' [-Wunused-variable]
+     uint32_t  pixel;
+               ^~~~~
+../src/MyApp_MTL2.c: In function 'spi_CallbackInterrupt':
+../src/MyApp_MTL2.c:169:49: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("spi_CallbackInterrupt: SPI IRQ, msg = %d\n",rxdata);
+                                                 ^
+../src/MyApp_MTL2.c:166:14: warning: unused variable 'status' [-Wunused-variable]
+     uint32_t status = alt_read_word(SPI_STATUS);
+              ^~~~~~
+../src/MyApp_MTL2.c: In function 'Task_FPGA_Button':
+../src/MyApp_MTL2.c:299:9: warning: 'PtrMsg' is used uninitialized in this function [-Wuninitialized]
+         MBXput(PrtMbx, PtrMsg, -1); // -1 = Infinite blocking
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/MyApp_MTL2.c: In function 'Task_HPS_Led':
+../src/MyApp_MTL2.c:244:13: warning: 'PtrMsg' is used uninitialized in this function [-Wuninitialized]
+         if (MBXget(PrtMbx, PtrMsg, 0) == 0) {  // 0 = Never blocks
+             ^~~~~~~~~~~~~~~~~~~~~~~~~
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Share/src/TIMERinit.c -o TIMERinit.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Drivers/src/alt_gpio.c -o alt_gpio.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Drivers/src/arm_acp.c -o arm_acp.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Drivers/src/arm_pl330.c -o arm_pl330.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Drivers/src/dw_i2c.c -o dw_i2c.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Drivers/src/dw_uart.c -o dw_uart.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Drivers/src/MediaIF.c -o MediaIF.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Platform/src/SysCall_CY5.c -o SysCall_CY5.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Drivers/src/dw_sdmmc.c -o dw_sdmmc.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/FatFS-0.13a/src/ff.c -o ff.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/FatFS-0.13a/src/ffunicode.c -o ffunicode.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Abassi/Abassi_FatFS.c -o Abassi_FatFS.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Drivers/src/Media_FatFS.c -o Media_FatFS.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Abassi/SysCall_FatFS.c -o SysCall_FatFS.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/fonts/tahomabold_20.c -o tahomabold_20.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/fonts/tahomabold_32.c -o tahomabold_32.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/geometry.c -o geometry.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/gesture.c -o gesture.o
+../painter/gesture.c:3:39: warning: missing braces around initializer [-Wmissing-braces]
+ const struct bmp_struct gesture_bmp = {
+                                       ^
+../painter/gesture.c:3:39: note: (near initialization for 'gesture_bmp')
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/gui_vpg.c -o gui_vpg.o
+../painter/gui_vpg.c: In function 'VPG_XLine':
+../painter/gui_vpg.c:53:14: warning: variable 'p' set but not used [-Wunused-but-set-variable]
+     alt_u32 *p;
+              ^
+../painter/gui_vpg.c: In function 'VPG_ColorPanel':
+../painter/gui_vpg.c:82:31: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     sprintf(szText,"Panel: %08xh", Color);
+                               ^
+../painter/gui_vpg.c: In function 'GUI_VPG':
+../painter/gui_vpg.c:227:14: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+     fpga_vfb = (unsigned long )(ALT_LWFPGASLVS_OFST + ALT_VIP_VFR_0_BASE);
+              ^
+../painter/gui_vpg.c:232:27: warning: passing argument 1 of 'VIPFR_Init' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     pReader =  VIPFR_Init(fpga_vfb, (void *)FR_FRAME_0, (void *)FR_FRAME_0, FRAME_WIDTH, FRAME_HEIGHT);
+                           ^~~~~~~~
+In file included from ../painter/gui.h:6:0,
+                 from ../painter/gui_vpg.c:34:
+../painter/vip_fr.h:23:19: note: expected 'uint32_t * {aka long unsigned int *}' but argument is of type 'volatile long unsigned int *'
+ VIP_FRAME_READER* VIPFR_Init(uint32_t *VipBase, void* Frame0_Base, void* Frame1_Base, uint32_t Frame_Width, uint32_t Frame_Height);
+                   ^~~~~~~~~~
+../painter/gui_vpg.c:248:54: warning: passing argument 4 of 'MTC2_GetStatus' from incompatible pointer type [-Wincompatible-pointer-types]
+         if (MTC2_GetStatus(pTouch,&Event, &TouchNum, &X1, &Y1)){
+                                                      ^
+In file included from ../painter/gui.h:5:0,
+                 from ../painter/gui_vpg.c:34:
+../painter/terasic_lib/multi_touch2.h:44:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'int *'
+ bool MTC2_GetStatus(MTC2_INFO *p,alt_u8 *Event, alt_u8 *TouchNum, uint16_t *X1, uint16_t *Y1);
+      ^~~~~~~~~~~~~~
+../painter/gui_vpg.c:248:59: warning: passing argument 5 of 'MTC2_GetStatus' from incompatible pointer type [-Wincompatible-pointer-types]
+         if (MTC2_GetStatus(pTouch,&Event, &TouchNum, &X1, &Y1)){
+                                                           ^
+In file included from ../painter/gui.h:5:0,
+                 from ../painter/gui_vpg.c:34:
+../painter/terasic_lib/multi_touch2.h:44:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'int *'
+ bool MTC2_GetStatus(MTC2_INFO *p,alt_u8 *Event, alt_u8 *TouchNum, uint16_t *X1, uint16_t *Y1);
+      ^~~~~~~~~~~~~~
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/gui.c -o gui.o
+In file included from ../painter/gui.c:42:0:
+../game/level.h:5:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int test();
+ ^~~
+../painter/gui.c: In function 'GUI':
+../painter/gui.c:274:12: warning: type defaults to 'int' in declaration of 'InitFlag' [-Wimplicit-int]
+     static InitFlag = true;
+            ^~~~~~~~
+../painter/gui.c:360:34: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+      printf("GUI: xcoord sent = %d\n", XS);
+                                  ^
+../painter/gui.c:361:34: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+      printf("GUI: ycoord sent = %d\n", YS);
+                                  ^
+../painter/gui.c:367:40: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+      printf("Wrote new msg in txdata: %d\n", *txdata);
+                                        ^
+../painter/gui.c:291:17: warning: unused variable 'UpdatePalette' [-Wunused-variable]
+     static bool UpdatePalette;
+                 ^~~~~~~~~~~~~
+../painter/gui.c:290:108: warning: unused variable 'ButtonId5' [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                                                                            ^~~~~~~~~
+../painter/gui.c:290:98: warning: unused variable 'ButtonId4' [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                                                                  ^~~~~~~~~
+../painter/gui.c:290:88: warning: unused variable 'ButtonId3' [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                                                        ^~~~~~~~~
+../painter/gui.c:290:78: warning: unused variable 'ButtonId2' [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                                              ^~~~~~~~~
+../painter/gui.c:290:68: warning: unused variable 'ButtonId' [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                                    ^~~~~~~~
+../painter/gui.c:290:58: warning: unused variable 'ColorPen4' [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                          ^~~~~~~~~
+../painter/gui.c:290:48: warning: unused variable 'ColorPen3' [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                ^~~~~~~~~
+../painter/gui.c:290:38: warning: unused variable 'ColorPen2' [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                      ^~~~~~~~~
+../painter/gui.c:290:27: warning: unused variable 'ColorPen1' [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                           ^~~~~~~~~
+../painter/gui.c:290:16: warning: unused variable 'ColorPen0' [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                ^~~~~~~~~
+../painter/gui.c:281:43: warning: unused variable 'ptGesture' [-Wunused-variable]
+     static POINT Pt1, Pt2, Pt3, Pt4, Pt5, ptGesture, PtR;
+                                           ^~~~~~~~~
+../painter/gui.c:281:38: warning: unused variable 'Pt5' [-Wunused-variable]
+     static POINT Pt1, Pt2, Pt3, Pt4, Pt5, ptGesture, PtR;
+                                      ^~~
+../painter/gui.c:281:33: warning: unused variable 'Pt4' [-Wunused-variable]
+     static POINT Pt1, Pt2, Pt3, Pt4, Pt5, ptGesture, PtR;
+                                 ^~~
+../painter/gui.c:281:28: warning: unused variable 'Pt3' [-Wunused-variable]
+     static POINT Pt1, Pt2, Pt3, Pt4, Pt5, ptGesture, PtR;
+                            ^~~
+../painter/gui.c:281:23: warning: unused variable 'Pt2' [-Wunused-variable]
+     static POINT Pt1, Pt2, Pt3, Pt4, Pt5, ptGesture, PtR;
+                       ^~~
+At top level:
+../painter/gui.c:281:23: warning: 'Pt2' defined but not used [-Wunused-variable]
+../painter/gui.c:281:28: warning: 'Pt3' defined but not used [-Wunused-variable]
+     static POINT Pt1, Pt2, Pt3, Pt4, Pt5, ptGesture, PtR;
+                            ^~~
+../painter/gui.c:281:33: warning: 'Pt4' defined but not used [-Wunused-variable]
+     static POINT Pt1, Pt2, Pt3, Pt4, Pt5, ptGesture, PtR;
+                                 ^~~
+../painter/gui.c:281:38: warning: 'Pt5' defined but not used [-Wunused-variable]
+     static POINT Pt1, Pt2, Pt3, Pt4, Pt5, ptGesture, PtR;
+                                      ^~~
+../painter/gui.c:281:43: warning: 'ptGesture' defined but not used [-Wunused-variable]
+     static POINT Pt1, Pt2, Pt3, Pt4, Pt5, ptGesture, PtR;
+                                           ^~~~~~~~~
+../painter/gui.c:290:16: warning: 'ColorPen0' defined but not used [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                ^~~~~~~~~
+../painter/gui.c:290:27: warning: 'ColorPen1' defined but not used [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                           ^~~~~~~~~
+../painter/gui.c:290:38: warning: 'ColorPen2' defined but not used [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                      ^~~~~~~~~
+../painter/gui.c:290:48: warning: 'ColorPen3' defined but not used [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                ^~~~~~~~~
+../painter/gui.c:290:58: warning: 'ColorPen4' defined but not used [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                          ^~~~~~~~~
+../painter/gui.c:290:68: warning: 'ButtonId' defined but not used [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                                    ^~~~~~~~
+../painter/gui.c:290:78: warning: 'ButtonId2' defined but not used [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                                              ^~~~~~~~~
+../painter/gui.c:290:88: warning: 'ButtonId3' defined but not used [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                                                        ^~~~~~~~~
+../painter/gui.c:290:98: warning: 'ButtonId4' defined but not used [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                                                                  ^~~~~~~~~
+../painter/gui.c:290:108: warning: 'ButtonId5' defined but not used [-Wunused-variable]
+     static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+                                                                                                            ^~~~~~~~~
+../painter/gui.c:291:17: warning: 'UpdatePalette' defined but not used [-Wunused-variable]
+     static bool UpdatePalette;
+                 ^~~~~~~~~~~~~
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/vip_fr.c -o vip_fr.o
+../painter/vip_fr.c: In function 'VIPFR_Init':
+../painter/vip_fr.c:15:16: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     p->VipBase = VipBase;
+                ^
+../painter/vip_fr.c: In function 'VIPFR_SetFrameSize':
+../painter/vip_fr.c:51:27: warning: passing argument 1 of 'FrameReader_SetFrame0' makes pointer from integer without a cast [-Wint-conversion]
+     FrameReader_SetFrame0(p->VipBase, (alt_u32)p->Frame0_Base, words, cycle, p->width, p->height, p->interlace);
+                           ^
+../painter/vip_fr.c:4:6: note: expected 'uint32_t * {aka long unsigned int *}' but argument is of type 'uint32_t {aka long unsigned int}'
+ void FrameReader_SetFrame0(alt_u32 *VipBase, alt_u32 FrameBase, alt_u32 words, alt_u32 cycle, alt_u32 width, alt_u32 height, alt_u32 interlace);
+      ^~~~~~~~~~~~~~~~~~~~~
+../painter/vip_fr.c:52:27: warning: passing argument 1 of 'FrameReader_SetFrame1' makes pointer from integer without a cast [-Wint-conversion]
+     FrameReader_SetFrame1(p->VipBase, (alt_u32)p->Frame1_Base, words, cycle, p->width, p->height, p->interlace);
+                           ^
+../painter/vip_fr.c:5:6: note: expected 'uint32_t * {aka long unsigned int *}' but argument is of type 'uint32_t {aka long unsigned int}'
+ void FrameReader_SetFrame1(alt_u32 *VipBase, alt_u32 FrameBase, alt_u32 words, alt_u32 cycle, alt_u32 width, alt_u32 height, alt_u32 interlace);
+      ^~~~~~~~~~~~~~~~~~~~~
+../painter/vip_fr.c: In function 'VIPFR_ActiveDrawFrame':
+../painter/vip_fr.c:67:30: warning: passing argument 1 of 'FrameReader_SelectFrame' makes pointer from integer without a cast [-Wint-conversion]
+      FrameReader_SelectFrame(p->VipBase, p->DisplayFrame);
+                              ^
+../painter/vip_fr.c:6:6: note: expected 'uint32_t * {aka long unsigned int *}' but argument is of type 'uint32_t {aka long unsigned int}'
+ void FrameReader_SelectFrame(alt_u32 *VipBase, alt_u32 FrameIndex);
+      ^~~~~~~~~~~~~~~~~~~~~~~
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/graphic_lib/simple_graphics.c -o simple_graphics.o
+../painter/graphic_lib/simple_graphics.c: In function 'vid_scroll_string_init':
+../painter/graphic_lib/simple_graphics.c:83:32: warning: implicit declaration of function 'alt_globaltmr_get64' [-Wimplicit-function-declaration]
+   scroll->ticks_at_last_move = alt_globaltmr_get64();
+                                ^~~~~~~~~~~~~~~~~~~
+../painter/graphic_lib/simple_graphics.c: In function 'vid_scroll_string':
+../painter/graphic_lib/simple_graphics.c:102:8: warning: unused variable 'pixels_to_move_by' [-Wunused-variable]
+   char pixels_to_move_by = 1;
+        ^~~~~~~~~~~~~~~~~
+../painter/graphic_lib/simple_graphics.c:101:9: warning: unused variable 'font_char_ptr' [-Wunused-variable]
+   char* font_char_ptr;
+         ^~~~~~~~~~~~~
+../painter/graphic_lib/simple_graphics.c:100:19: warning: unused variable 'column_mask' [-Wunused-variable]
+   char character, column_mask;
+                   ^~~~~~~~~~~
+../painter/graphic_lib/simple_graphics.c:100:8: warning: unused variable 'character' [-Wunused-variable]
+   char character, column_mask;
+        ^~~~~~~~~
+../painter/graphic_lib/simple_graphics.c:99:77: warning: unused variable 'char_column' [-Wunused-variable]
+   int x_start, x_end, x_index, string_x_index, string_char_index, char_row, char_column;
+                                                                             ^~~~~~~~~~~
+../painter/graphic_lib/simple_graphics.c:99:67: warning: unused variable 'char_row' [-Wunused-variable]
+   int x_start, x_end, x_index, string_x_index, string_char_index, char_row, char_column;
+                                                                   ^~~~~~~~
+../painter/graphic_lib/simple_graphics.c:99:48: warning: unused variable 'string_char_index' [-Wunused-variable]
+   int x_start, x_end, x_index, string_x_index, string_char_index, char_row, char_column;
+                                                ^~~~~~~~~~~~~~~~~
+../painter/graphic_lib/simple_graphics.c:99:32: warning: unused variable 'string_x_index' [-Wunused-variable]
+   int x_start, x_end, x_index, string_x_index, string_char_index, char_row, char_column;
+                                ^~~~~~~~~~~~~~
+../painter/graphic_lib/simple_graphics.c:99:23: warning: unused variable 'x_index' [-Wunused-variable]
+   int x_start, x_end, x_index, string_x_index, string_char_index, char_row, char_column;
+                       ^~~~~~~
+../painter/graphic_lib/simple_graphics.c:99:16: warning: unused variable 'x_end' [-Wunused-variable]
+   int x_start, x_end, x_index, string_x_index, string_char_index, char_row, char_column;
+                ^~~~~
+../painter/graphic_lib/simple_graphics.c:99:7: warning: unused variable 'x_start' [-Wunused-variable]
+   int x_start, x_end, x_index, string_x_index, string_char_index, char_row, char_column;
+       ^~~~~~~
+../painter/graphic_lib/simple_graphics.c: In function 'vid_draw_box':
+../painter/graphic_lib/simple_graphics.c:239:16: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+  if(horiz_start>horiz_end | vert_start > vert_end){
+     ~~~~~~~~~~~^~~~~~~~~~
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/graphic_lib/simple_text.c -o simple_text.o
+../painter/graphic_lib/simple_text.c: In function 'vid_print_char_alpha':
+../painter/graphic_lib/simple_text.c:286:49: warning: pointer targets in passing argument 2 of 'seperate_color_channels' differ in signedness [-Wpointer-sign]
+   seperate_color_channels(display->color_depth, (char *)&color, &original_red, &original_green, &original_blue);
+                                                 ^
+../painter/graphic_lib/simple_text.c:81:5: note: expected 'unsigned char *' but argument is of type 'char *'
+ int seperate_color_channels(int color_depth, unsigned char * color, unsigned char * red, unsigned char * green, unsigned char * blue)
+     ^~~~~~~~~~~~~~~~~~~~~~~
+../painter/graphic_lib/simple_text.c:298:68: warning: pointer targets in passing argument 5 of 'merge_color_channels' differ in signedness [-Wpointer-sign]
+       merge_color_channels(display->color_depth, red, green, blue, (char *)&new_color);
+                                                                    ^
+../painter/graphic_lib/simple_text.c:125:5: note: expected 'unsigned char *' but argument is of type 'char *'
+ int merge_color_channels(int color_depth, unsigned char red, unsigned char green, unsigned char blue, unsigned char * color)
+     ^~~~~~~~~~~~~~~~~~~~
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/terasic_lib/debug.c -o debug.o
+../painter/terasic_lib/debug.c: In function 'myprintf_hexarray':
+../painter/terasic_lib/debug.c:83:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+         sprintf(szText, "[%02X]", *(pHex+i));
+                 ^~~~~~
+In file included from c:\intelfpga\18.1\embedded\host_tools\mentor\gnu\arm\baremetal\arm-altera-eabi\include\stdio.h:29:0,
+                 from ../painter/terasic_lib/debug.c:33:
+c:\intelfpga\18.1\embedded\host_tools\mentor\gnu\arm\baremetal\arm-altera-eabi\include\stdio.h:281:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+In file included from ../painter/terasic_lib/terasic_includes.h:42:0,
+                 from ../painter/terasic_lib/debug.c:35:
+../painter/terasic_lib/debug.c:84:16: warning: pointer targets in passing argument 1 of 'myprintf' differ in signedness [-Wpointer-sign]
+         DEBUG((szText));
+                ^
+../painter/terasic_lib/debug.h:78:46: note: in definition of macro 'DEBUG'
+     #define DEBUG(x)               {myprintf x;}  // standard in/out, specifed in project (it could be uart, jtag, or lcd)
+                                              ^
+../painter/terasic_lib/debug.c:64:5: note: expected 'char *' but argument is of type 'unsigned char *'
+ int myprintf(char *format, ...){
+     ^~~~~~~~
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/terasic_lib/I2C_core.c -o I2C_core.o
+../painter/terasic_lib/I2C_core.c:37:0: warning: "I2C_DEBUG" redefined
+     #define I2C_DEBUG(x)    DEBUG(x)
+ 
+<command-line>:0:0: note: this is the location of the previous definition
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/terasic_lib/I2C.c -o I2C.o
+../painter/terasic_lib/I2C.c:37:0: warning: "I2C_DEBUG" redefined
+     #define I2C_DEBUG(x)    DEBUG(x)
+ 
+<command-line>:0:0: note: this is the location of the previous definition
+../painter/terasic_lib/I2C.c: In function 'i2c_write':
+../painter/terasic_lib/I2C.c:275:9: warning: unused variable 'w' [-Wunused-variable]
+     int w;
+         ^
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/terasic_lib/multi_touch2.c -o multi_touch2.o
+../painter/terasic_lib/multi_touch2.c: In function 'mtc2_QueryData':
+../painter/terasic_lib/multi_touch2.c:12:46: warning: unused variable 'y5' [-Wunused-variable]
+     unsigned long x1,y1,x2,y2,x3,y3,x4,y4,x5,y5;
+                                              ^~
+../painter/terasic_lib/multi_touch2.c:12:43: warning: unused variable 'x5' [-Wunused-variable]
+     unsigned long x1,y1,x2,y2,x3,y3,x4,y4,x5,y5;
+                                           ^~
+../painter/terasic_lib/multi_touch2.c:12:40: warning: unused variable 'y4' [-Wunused-variable]
+     unsigned long x1,y1,x2,y2,x3,y3,x4,y4,x5,y5;
+                                        ^~
+../painter/terasic_lib/multi_touch2.c:12:37: warning: unused variable 'x4' [-Wunused-variable]
+     unsigned long x1,y1,x2,y2,x3,y3,x4,y4,x5,y5;
+                                     ^~
+../painter/terasic_lib/multi_touch2.c:12:34: warning: unused variable 'y3' [-Wunused-variable]
+     unsigned long x1,y1,x2,y2,x3,y3,x4,y4,x5,y5;
+                                  ^~
+../painter/terasic_lib/multi_touch2.c:12:31: warning: unused variable 'x3' [-Wunused-variable]
+     unsigned long x1,y1,x2,y2,x3,y3,x4,y4,x5,y5;
+                               ^~
+../painter/terasic_lib/multi_touch2.c:12:28: warning: unused variable 'y2' [-Wunused-variable]
+     unsigned long x1,y1,x2,y2,x3,y3,x4,y4,x5,y5;
+                            ^~
+../painter/terasic_lib/multi_touch2.c:12:25: warning: unused variable 'x2' [-Wunused-variable]
+     unsigned long x1,y1,x2,y2,x3,y3,x4,y4,x5,y5;
+                         ^~
+../painter/terasic_lib/multi_touch2.c: In function 'mtc2_ISR':
+../painter/terasic_lib/multi_touch2.c:47:15: warning: unused variable 'p' [-Wunused-variable]
+    MTC2_INFO *p = (MTC2_INFO *)context;
+               ^
+At top level:
+../painter/terasic_lib/multi_touch2.c:45:13: warning: 'mtc2_ISR' defined but not used [-Wunused-function]
+ static void mtc2_ISR(void* context, alt_u32 id){
+             ^~~~~~~~
+../painter/terasic_lib/multi_touch2.c: In function 'mtc2_QueryData':
+../painter/terasic_lib/multi_touch2.c:10:17: warning: 'pEvent' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     MTC2_EVENT *pEvent, *pOldEvent;
+                 ^~~~~~
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../painter/terasic_lib/queue.c -o queue.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../hwlib/alt_generalpurpose_io.c -o alt_generalpurpose_io.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../hwlib/alt_globaltmr.c -o alt_globaltmr.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../hwlib/alt_clock_manager.c -o alt_clock_manager.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../game/game.c -o game.o
+../game/game.c: In function 'notcuty':
+../game/game.c:36:9: warning: enumeration value 'LEFT' not handled in switch [-Wswitch]
+         switch (line->dir){
+         ^~~~~~
+../game/game.c:36:9: warning: enumeration value 'RIGHT' not handled in switch [-Wswitch]
+../game/game.c: In function 'notcutx':
+../game/game.c:55:9: warning: enumeration value 'UP' not handled in switch [-Wswitch]
+         switch (line->dir){
+         ^~~~~~
+../game/game.c:55:9: warning: enumeration value 'DOWN' not handled in switch [-Wswitch]
+../game/game.c: In function 'displayimage':
+../game/game.c:214:28: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+              myFrameBuffer = 0x20000000;
+                            ^
+../game/game.c:230:28: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+              myFrameBuffer = 0x20000000;
+                            ^
+../game/game.c:199:16: warning: unused variable 'pixel' [-Wunused-variable]
+      uint32_t  pixel;
+                ^~~~~
+../game/game.c:190:6: warning: unused variable 'height' [-Wunused-variable]
+  int height = img->height; // not used yet
+      ^~~~~~
+../game/game.c: In function 'notcuty':
+../game/game.c:48:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../game/game.c: In function 'notcutx':
+../game/game.c:67:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../game/level.c -o level.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Platform/src/mAbassiCfgA9.c -o mAbassiCfgA9.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Abassi/Shell.c -o Shell.o
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I ../game -I ../painter -I ../painter/fonts -I ../painter/graphic_lib -I ../painter/terasic_lib -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I../../mAbassi/FatFS-0.13a/inc -I../../Drivers/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DOS_SYS_CALL=1 -DSYS_CALL_DEV_I2C=1 -DSYS_CALL_DEV_TTY=1 -DSYS_CALL_TTY_EOF=4 -DI2C_DEBUG=0 -DI2C_OPERATION=0x00707 -DI2C_USE_MUTEX=1 -DMEDIA_DEBUG=1 -DSDMMC_BUFFER_TYPE=SDMMC_BUFFER_CACHED -DSDMMC_NUM_DMA_DESC=64 -DSDMMC_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -DMEDIA_MDRV_SIZE=-1 -D_VOLUMES=2 -DSYS_CALL_N_DRV=2 -DMEDIA_AUTO_SELECT=0 -DMEDIA_SDMMC0_IDX=0 -DMEDIA_SDMMC0_DEV=SDMMC_DEV -DMEDIA_MDRV_IDX=1 -DDEMO_USE_SDMMC=1 -D soc_cv_av -D MYAPP_MTL -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../../mAbassi/Abassi/SubShell.c -o SubShell.o
+"arm-altera-eabi-g++" -Wl,--gc-sections  -Wl,-L../../mAbassi/Platform/lib -Xlinker -Map -Xlinker Demo_100_SMP_DE0NANOSOC_A9_GCC.map 			\
+      -T ../../mAbassi/AR5_CY5.ld  Main_mAbassi.o MyApp_MTL2.o TIMERinit.o alt_gpio.o arm_acp.o arm_pl330.o dw_i2c.o dw_uart.o MediaIF.o SysCall_CY5.o dw_sdmmc.o ff.o ffunicode.o Abassi_FatFS.o Media_FatFS.o SysCall_FatFS.o tahomabold_20.o tahomabold_32.o geometry.o gesture.o gui_vpg.o gui.o vip_fr.o simple_graphics.o simple_text.o debug.o I2C_core.o I2C.o multi_touch2.o queue.o alt_generalpurpose_io.o alt_globaltmr.o alt_clock_manager.o game.o level.o mAbassiCfgA9.o Shell.o SubShell.o   -Wl,-l_mAbassi_EVAL_GCC_AR5_CY5 -Wl,-lcs3 -Wl,-lcs3unhosted -Wl,-lcs3arm					\
+          -Wl,-lgcc -Wl,-lc -o Demo_100_SMP_DE0NANOSOC_A9_GCC.axf
+"arm-altera-eabi-nm" Demo_100_SMP_DE0NANOSOC_A9_GCC.axf > Demo_100_SMP_DE0NANOSOC_A9_GCC.axf.map
+"arm-altera-eabi-objcopy" Demo_100_SMP_DE0NANOSOC_A9_GCC.axf -j vectors -j .rodata -j .text -j .data -j .bss --output-target=binary Demo_100_SMP_DE0NANOSOC_A9_GCC.bin
+"Done"

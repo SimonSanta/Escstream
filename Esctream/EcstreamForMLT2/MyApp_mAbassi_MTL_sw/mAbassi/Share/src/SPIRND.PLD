@@ -1,0 +1,56 @@
+Name      SPIRND;
+Partno    SPIRND;
+Date      2017;
+Revision  01;
+Designer  CT;
+Company   Code Time Technologies;
+Assembly  None;
+Location  None;
+Device    g22V10;
+
+
+/**  Inputs  **/
+
+PIN 1 = clock;                  /* Register Clock               */
+PIN 2 = nCS;                    /* Chip Select (valid low)      */
+PIN 3 = Sin;                    /* SPI bus input signal (MOSI)  */
+
+/**  Outputs  **/
+
+PIN 14 = Q8;
+PIN 15 = Q7;
+PIN 16 = Q6;
+PIN 17 = Q5;
+PIN 18 = Q4;
+PIN 20 = Q3;
+PIN 21 = Q2;
+PIN 22 = Q1;
+PIN 23 = Q0;                    /* Random sequence output       */
+
+PIN 19 = Err;
+
+field output = [Q8..0];         /* Outputs Field                */
+
+/** Logic Equations **/
+
+Q0.d = (Q3$Q8)
+     # (!(Q8#Q7#Q6#Q5#Q4#Q3#Q2#Q1#Q0));
+Q1.d = Q0;
+Q2.d = Q1;
+Q3.d = Q2;
+Q4.d = Q3;
+Q5.d = Q4;
+Q6.d = Q5;
+Q7.d = Q6;
+Q8.d = Q7;
+
+output.ar = nCS;                             /* asynchronous reset           */
+output.sp = 'b'000000000;                    /* synchronous preset           */
+output.oe = 'b'111111111;                    /* tri-state control            */
+
+Err.d  = ((Q3$Q8) $ Sin)
+       & (Q8#Q7#Q6#Q5#Q4#Q3#Q2#Q1#Q0);
+Err.ar = nCS;
+Err.sp = 'b'0;
+Err.oe = 'b'1;
+

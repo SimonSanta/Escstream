@@ -1,0 +1,2057 @@
+address player0: 17358832
+player:0 player->x:20 player->start_x:20 player->y:220 player->start_y:220 player->color:1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+VICTORY condition
+VICTORY
+GO=1
+address player0: 17358648
+player:0 player->x:20 player->start_x:20 player->y:220 player->start_y:220 player->color:1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+DEFEAT
+GO=1
+address player0: 17358648
+player:0 player->x:20 player->start_x:20 player->y:220 player->start_y:220 player->color:1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 1
+interrupt_modif2
+interrupt_modif1 line->interrupt 0
+line->interrupt 1
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+VICTORY condition
+VICTORY
+GO=1
+address player0: 58022216
+player:0 player->x:20 player->start_x:20 player->y:220 player->start_y:220 player->color:1
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+line->interrupt 0
+(no_interrupt[0] && no_interrupt[1])=true
+interrupt_modif1 line->interrupt 0
+interrupt_modif1 line->interrupt 0
+GO=0

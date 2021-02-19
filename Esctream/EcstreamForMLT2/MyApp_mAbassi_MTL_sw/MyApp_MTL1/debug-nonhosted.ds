@@ -1,0 +1,54 @@
+#
+# Reset and stop the system.
+#
+reset system
+stop
+wait 30s
+
+#
+# Disable semihosting.
+#
+set semihosting enabled false
+
+#
+# Load the SPL preloader into memory.
+#
+loadfile "$sdir/preloader/u-boot-spl" 0x0
+
+#
+# Delete any existing breakpoints.
+#
+delete
+
+#
+# Set a breakpoint in the SPL function spl_boot_device(). This function is
+# called right before the SPL tries to load the next stage in the preloader.
+#
+tbreak spl_boot_device
+
+#
+# Set the PC to the entry point and go.
+#
+set variable $PC=_start
+continue
+
+#
+# Wait for the breakpoint.
+#
+wait
+
+#
+# Load the program & set-up PC / mode / run it
+#
+loadfile "$sdir/output/Demo_100_SMP_DE0NANOSOC_A9_GCC.axf" 0x0
+
+#
+# Run the target and break at main().
+#
+delete
+tbreak main
+set variable $PC=_vector_table
+set variable $CPSR=0x000001DF
+continue
+
+#EOF

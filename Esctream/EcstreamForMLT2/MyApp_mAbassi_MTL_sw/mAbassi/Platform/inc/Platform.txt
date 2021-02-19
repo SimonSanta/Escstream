@@ -1,0 +1,175 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* FILE :        Platform.txt																		*/
+/*																									*/
+/* CONTENTS :																						*/
+/*               Explanation for the platform numbering and list of supported platform				*/
+/*																									*/
+/*																									*/
+/* Copyright (c) 2016-2019, Code-Time Technologies Inc. All rights reserved.						*/
+/*																									*/
+/* Code-Time Technologies retains all right, title, and interest in and to this work				*/
+/*																									*/
+/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS							*/
+/* OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF										*/
+/* MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL							*/
+/* THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR								*/
+/* OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,							*/
+/* ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR							*/
+/* OTHER DEALINGS IN THE SOFTWARE.																	*/
+/*																									*/
+/*																									*/
+/*	$Revision: 1.8 $																				*/
+/*	$Date: 2019/01/10 18:07:07 $																	*/
+/*																									*/
+/* ------------------------------------------------------------------------------------------------ */
+
+	Abassi (mainly assembly code) and the Demos use a number to identify the target platform.
+
+	For Abassi, the platform number is only used to be informed of the target device.
+	For the demos, this is mainly to inform the demo code what is the target board, in order to
+	know how to access the LEDs, buttons, I2C, Ethernet etc.
+
+	The board & device are defined through the build option OS_PLATFORM and is always a hex number.
+	The last 6 nibbles define a unique device or device family and the upper 2 nibbles define the
+    board for that device. Each device family have a unique group of 2,3 or 4 nibbles to identify
+    them.  The unique set of nibbles is shown in parentheses, e.g for i.MX6 (0x....FEE6).
+
+	If the demos are re-used for you custom board, it would be a good idea to number your custom
+	board at 0xFF000000, as this value would most likely never be used by Code Time demos.
+	For example, assuming your target device is an Arria 10, then you should use 0xFF00AA10 as
+	the value for OS_PLATFORM.  The 4 lower nibbles (0xAA10) uniquely identifies the Arria 10 and
+	your custom board for the Arria 10 is #0xFF.
+
+	All target dependent defintions are loacted in these 2 files:
+			Platform.h
+			HWinfo.h
+	Platform.h contains all the information related ot the processor itself
+	           The defintions are grouped in two sections.
+	           1st - the processor itself, irrelevent of the clock, or what is connected to it.
+	                 defines the interrupt #, DMA channels etc
+	           2nd - outside of the processor, irrelevent of the peripherals
+	                 defines the clock and which devices are connected. e.g. UART device #
+	HWinfo.h contains all the information related to the peripherals on the target platform
+	           e.g. number of switches & LEDs and how to access them
+
+/* ------------------------------------------------------------------------------------------------ */
+
+ARM Cortex A9
+
+	Cyclone V  (0x..00AAC5)
+                0x0000AAC5		Cyclone V SocFPGA development board
+                0x0100AAC5		DE0-Nano / DE10-nano / Atlas evaluation board
+                0x0200AAC5		EBV Socrates evaluation board
+	Arria V    (0x..00AAC5)		(note: same dev # as Cyclone V because HPSs are the same)
+                0x4000AAC5		Arria V SocFPGA development board
+	Arria 10   (0x..00AA10)
+                0x0000AA10		Arria 10 SocFPGA development board
+	i.MX6      (0x..00FEE6)
+                0x0000FEE6		i.MX6 Sabrelite evaluation board
+	OMAP	   (0x..0044..)
+                0x00004460		Panda board with OMAP 4460
+	Zynq 7020  (0x..007020)
+                0x00007020		Zynq 7020 Zedboard
+
+/* ------------------------------------------------------------------------------------------------ */
+
+ARM Cortex A9
+
+	UltraScale+ (0x..007753)
+                 0x00007753		A53s on the ZCU-102
+
+/* ------------------------------------------------------------------------------------------------ */
+
+ARM Cortex M0
+
+	LPCXXXXXX: (0x..0C....)
+				0x000C1124		NGX Technologies BlueBoard LPC11U24 evaluation board
+				0x000C1227		Olimex LPC1227-STK evaluation board
+
+/* ------------------------------------------------------------------------------------------------ */
+
+ARM Cortex M3
+
+	LM3SXXXX:  (0x..35....)
+				0x00351968		TI's EKLM3S1968 evaluation board
+	LPCXXXXXX: (0x..3C....)
+				0x003C1343		NGX Technologies BlueBoard LPC1343 evaluation board
+				0x003C1766
+	STM32F1XX: (0x..32F1..)
+				0x1032F107		Olimex STM32-P107 board (STM32F107)
+	STM32F2XX: (0x..32F2..)
+				0x0032F207		STM3220G development board (STM32F207)
+				0x1032F207		Olimex STM32-P207 board (STM32F207)
+
+/* ------------------------------------------------------------------------------------------------ */
+
+ARM Cortex M4
+
+	STM32F4XX: (0x..32F4..)
+				0x0032F407		STM32F4 Discovery board (STM32F407)
+				0x1032F407		Olimex STM32-P407 board (STM32F407)
+
+/* ------------------------------------------------------------------------------------------------ */
+
+ARM Cortex R5
+
+	UltraScale+	(0x..007705)
+                 0x00007705		R5s on the ZCU-102
+
+/* ------------------------------------------------------------------------------------------------ */
+
+AVR
+
+	ATmega:    (0x..AE8...
+				0x00AE8128		Olimex AVR-MT-128 evaluation board
+
+/* ------------------------------------------------------------------------------------------------ */
+
+AVR32A
+
+	UC3B:      (0x..AEA...)
+				0x00AEA101		Atmel EVK1101 evaluation board
+
+/* ------------------------------------------------------------------------------------------------ */
+
+ColdFire       (0x..CF....)
+				0x00CF5223		Freescale M52233DEMO evaluation board	
+
+/* ------------------------------------------------------------------------------------------------ */
+
+C28X
+
+	P28X:      (0x..028...)
+				0x00028027		Olimex TMX320-P28027 evaluation board 
+
+/* ------------------------------------------------------------------------------------------------ */
+
+MSP430
+
+	MSP430:    (0x..43....)
+				0x00431611		Olimex MSP430-P1611 evaluation board
+	MSP430X:   (0x..44....)
+				0x00445438		Olimex MSP-5438STK evaluation board
+
+/* ------------------------------------------------------------------------------------------------ */
+
+PIC32          (0x..320...)
+				0x00320000		Olimex PIC32-WEB evaluation board
+
+/* ------------------------------------------------------------------------------------------------ */
+
+8051
+
+	Generic:   (0x..008051)
+				0x00008051		Standard 8051 device
+
+/* ------------------------------------------------------------------------------------------------ */
+
+80251
+
+	Generic:   (0x..080251)
+				0x00080251		Standard 80251 device
+
+/* ------------------------------------------------------------------------------------------------ */
+
+/* EOF */

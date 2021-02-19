@@ -1,0 +1,22 @@
+/*
+ * game.h
+ *
+ *  Created on: Mar 8, 2019
+ *      Author: Noemie2
+ */
+
+#ifndef GAME_GAME_H_
+#define GAME_GAME_H_
+#include "Const.h"
+int abs(int a);
+void pos_correlator(LVL* lvl);
+bool success(LVL* lvl);
+extern int *flag;
+
+
+
+
+
+
+
+#endif /* GAME_GAME_H_ */

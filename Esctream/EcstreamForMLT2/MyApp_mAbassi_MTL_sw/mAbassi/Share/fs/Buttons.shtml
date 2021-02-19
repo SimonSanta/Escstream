@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><title>Button Status</title>
+<meta http-equiv="refresh" content="1" >
+</head>
+<style>
+a {
+   text-decoration: none;
+}
+a:hover {
+   color:white;
+   text-decoration: underline;
+}
+</style>
+<body style="" lang="EN-US" link="orange" vlink="orange">
+<div style="margin-left: 30pt;">
+ <p style="text-align: center;" align="center"><span style="font-size: 24pt; font-family: Arial"><strong><!--#echo var="RTOS_ID" --> Webserver Demo</strong></span></p>
+ <div style="text-align: center;" align="center">
+  <hr align="center" size="2" width="100%">
+ </div>
+ <div align="center"><span style="font-weight: bold;"></span>
+  <table style="width: 500px; height: 30px;" border="1" cellpadding="2" cellspacing="2">
+   <tbody>
+    <tr>
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/default.shtml"><span style="color: white;">Home Page</span></a></small></td>
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/TaskList.shtml"><span style="color: white;">Task List</span></a></small></td>
+     <!--#if expr="$SHOW_LED_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/LED.shtml"><span style="color: white;">LED Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_LCD_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/LCD.shtml"><span style="color: white;">LCD Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_I2CC_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/I2C.shtml"><span style="color: white;">I2C Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_I2CS_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/I2Cstatus.shtml"><span style="color: white;">I2C Status</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_RTC_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/RTC.shtml"><span style="color: white;">RTC Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_SW_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/Switches.shtml"><span style="color: white;">Switch Status</span></a></small></td>
+     <!--#endif-->
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div align="center">
+  <table style="background: white none repeat scroll 0% 50%"; border="0" cellpadding="0" cellspacing="0" width="770">
+   <tbody>
+    <tr style="">
+     <td style="padding: 2.25pt;">
+      <table border="0" cellpadding="3" cellspacing="0" width="100%">
+       <tbody>
+        <tr>
+         <td valign="top" width="72%">
+          <p><br><small><span style="font-family: Arial;">This page displays the status of the push buttons located on the <!--#echo var="REMOTE_HOST" --> development board. Any changes are automatically updated.</span></small></p>
+          <p>&nbsp;</p>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table style="width: 785px; color: white; height: 31px;" white="" color="" ;="" 100="" border="0" cellpadding="3" cellspacing="0">
+       <tbody>
+        <tr>
+         <td style="height: 15px; font-family: Arial; background-color: rgb(252, 57, 2);"><big><big><font size="-1"><big><big><strong>Push Buttons</strong></big></big></font></big></big></td>
+        </tr>
+       </tbody>
+      </table>
+      <div align="center">
+       <br><small><span style="font-family: Arial;">
+        <!--#if expr="$SHOW_RTC = YES" -->
+        Webserver Time:&nbsp;<!--#echo var="DATE_LOCAL" --><br>
+        <!--#endif -->
+        System Uptime:&nbsp;<!--#echo var="UP_TIME" --><br>
+        <br><br>
+        <table border="1" cellpadding="5" cellspacing="1">
+         <tbody>
+          <tr>
+           <td><small><span style="font-family: Arial;">Status</span></small>
+            <!--#if expr="$BUT0 = ON" -->
+            <img src="/images/SW1.png">
+            <!--#elif expr="$BUT0 = OFF" -->
+            <img src="/images/SW0.png">
+            <!--#endif -->
+            <!--#if expr="$BUT1 = ON" -->
+            <img src="/images/SW1.png">
+            <!--#elif expr="$BUT1 = OFF" -->
+            <img src="/images/SW0.png">
+            <!--#endif -->
+            <!--#if expr="$BUT2 = ON" -->
+            <img src="/images/SW1.png">
+            <!--#elif expr="$BUT2 = OFF" -->
+            <img src="/images/SW0.png">
+            <!--#endif -->
+            <!--#if expr="$BUT3 = ON" -->
+            <img src="/images/SW1.png">
+            <!--#elif expr="$BUT3 = OFF" -->
+            <img src="/images/SW0.png">
+            <!--#endif -->
+            <!--#if expr="$BUT4 = ON" -->
+            <img src="/images/SW1.png">
+            <!--#elif expr="$BUT4 = OFF" -->
+            <img src="/images/SW0.png">
+            <!--#endif -->
+            <!--#if expr="$BUT5 = ON" -->
+            <img src="/images/SW1.png">
+            <!--#elif expr="$BUT5 = OFF" -->
+            <img src="/images/SW0.png">
+            <!--#endif -->
+            <!--#if expr="$BUT6 = ON" -->
+            <img src="/images/SW1.png">
+            <!--#elif expr="$BUT6 = OFF" -->
+            <img src="/images/SW0.png">
+            <!--#endif -->
+            <!--#if expr="$BUT7 = ON" -->
+            <img src="/images/SW1.png">
+            <!--#elif expr="$BUT7 = OFF" -->
+            <img src="/images/SW0.png">
+            <!--#endif -->
+            <!--#if expr="$BUT8 = ON" -->
+            <img src="/images/SW1.png">
+            <!--#elif expr="$BUT8 = OFF" -->
+            <img src="/images/SW0.png">
+            <!--#endif -->
+            <!--#if expr="$BUT9 = ON" -->
+            <img src="/images/SW1.png">
+            <!--#elif expr="$BUT9 = OFF" -->
+            <img src="/images/SW0.png">
+            <!--#endif -->
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </span></small>
+      </div>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+</body>
+</html>

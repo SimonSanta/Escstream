@@ -1,0 +1,59 @@
+The FullFAT API tries to be concise and easy to use, while providing a lot of flexibility to cover the needs of all possible scenarios.
+
+If FullFAT doesn't provide a service or function natively, then it should be very easy for a developer to easily recreate such functionality using the other provided API functions.
+\newline
+\newline
+\textbf{NOTE:} Current API is subject to change before the 1.0 release. Pay particular attention to the FF\textunderscore Open() function, which is likely to match the ANSI C fopen() standard library function for the 1.0 release.
+
+
+\subsection{FF\textunderscore CreateIOMAN()}
+
+FF\textunderscore CreateIOMAN() creates the FF\textunderscore IOMAN type object, that is required for all FullFAT API functions except the FILE I/O functions. This allows FullFAT to be completely re-entrant throughout any execution context, and also provides the possibility to have multiple concurrent instances of FullFAT running in a single or multi-threaded environment. Inn other words, FullFAT can use multiple devices and partitions, while keeping each device completely isolated.
+\subsubsection{Function Prototype}
+\begin{lstlisting}
+FF_IOMAN *FF_CreateIOMAN(
+				FF_T_UINT8 *pCacheMem, 	// Pointer to memory for Cache.
+				FF_T_UINT32 Size, 		// Size of memory.
+				FF_T_UINT16 BlkSize, 	// Blocksize to use.
+				FF_ERROR *pError		// Error Code.
+);
+\end{lstlisting}
+
+\begin{center}
+    \begin{tabular}{ | l | l | p{5cm} |}
+    \hline
+    TYPE & Parameter & Description \\ \hline
+    Monday & 11C & A clear day with lots of sunshine.
+    However, the strong breeze will bring down the temperatures. \\ \hline
+    Tuesday & 9C & Cloudy with rain, across many northern regions. Clear spells 
+    across most of Scotland and Northern Ireland, 
+    but rain reaching the far northwest. \\ \hline
+    Wednesday & 10C & Rain will still linger for the morning. 
+    Conditions will improve by early afternoon and continue 
+    throughout the evening. \\
+    \hline
+    \end{tabular}
+\end{center}
+pCacheMem - A byte-wise pointer to some memory that FullFAT may use for its working caches. This can be NULL if FullFAT is able to malloc() its own memory. The size of this memory must be a multiple of the provided blocksize.
+
+Size - The size in bytes that the memory for FullFAT's working cache's can be.
+
+BlkSize - The blocksize of the device you want FullFAT to work with.
+
+pError - A pointer to a FullFAT error code. This should be checked in case the function returns NULL.
+
+\begin{lstlisting}
+#include "fullfat.h" 				// Include FullFAT's type definitions.
+
+FF_IOMAN *pIoman;					// Declare an I/O Manager pointer.
+
+pIoman = FF_CreateIOMAN();
+
+\end{lstlisting}
+
+
+\subsection{FF\textunderscore DestroyIOMAN()}
+
+This function deestroys the IOMAN object and cleans all memory or resources used.
+
+This function will only succeed when there are no actively mounted partitions. \textbf{See: FF\textunderscore UnmountPartition}.

@@ -1,0 +1,25 @@
+#ifndef GUI_H_
+#define GUI_H_
+
+#include "terasic_includes.h"
+#include "multi_touch2.h"
+#include "vip_fr.h"
+#include "stdbool.h"
+#include "queue.h"
+
+void GUI(MTC2_INFO *pTouch, int lvl_num, bool *GO);
+bool SPI_GetStatus(uint16_t *PX, uint16_t *PY, uint16_t *XR, uint16_t *YR);//added
+
+// ***ADDED
+typedef struct{
+    uint16_t xcoord;
+    uint16_t ycoord;
+}SPI_EVENT;
+
+extern uint32_t *txdata;
+extern SPI_EVENT *lastMsg;
+
+// ***ADDED
+#define MSG_QUEUE_SIZE		32
+
+#endif /*GUI_H_*/

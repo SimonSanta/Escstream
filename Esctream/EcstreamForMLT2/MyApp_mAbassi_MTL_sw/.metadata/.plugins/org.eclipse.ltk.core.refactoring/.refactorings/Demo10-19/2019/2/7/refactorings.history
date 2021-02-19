@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Demo10/Demo9_GCC.make&apos; to &apos;Demo10_GCC.make&apos;" description="Rename resource &apos;Demo9_GCC.make&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Demo9_GCC.make" name="Demo10_GCC.make" stamp="1550064722344" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Demo10-19/Demo10_GCC.make&apos; to &apos;Demo10-19_GCC.make&apos;" description="Rename resource &apos;Demo10_GCC.make&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Demo10_GCC.make" name="Demo10-19_GCC.make" stamp="1550065214875" updateReferences="true"/>
+</session>

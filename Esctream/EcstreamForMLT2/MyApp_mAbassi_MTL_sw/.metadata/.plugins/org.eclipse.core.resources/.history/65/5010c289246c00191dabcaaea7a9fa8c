@@ -1,0 +1,907 @@
+// --------------------------------------------------------------------
+// Copyright (c) 2011 by Terasic Technologies Inc.
+// --------------------------------------------------------------------
+//
+// Permission:
+//
+//   Terasic grants permission to use and modify this code for use
+//   in synthesis for all Terasic Development Boards and Altera Development
+//   Kits made by Terasic.  Other use of this code, including the selling
+//   ,duplication, or modification of any portion is strictly prohibited.
+//
+// Disclaimer:
+//
+//   This VHDL/Verilog or C/C++ source code is intended as a design reference
+//   which illustrates how these types of functions can be implemented.
+//   It is the user's responsibility to verify their design for
+//   consistency and functionality through the use of formal
+//   verification methods.  Terasic provides no warranty regarding the use
+//   or functionality of this code.
+//
+// --------------------------------------------------------------------
+//
+//                     Terasic Technologies Inc
+//                     356 Fu-Shin E. Rd Sec. 1. JhuBei City,
+//                     HsinChu County, Taiwan
+//                     302
+//
+//                     web: http://www.terasic.com/
+//                     email: support@terasic.com
+//
+// --------------------------------------------------------------------
+
+
+#include "terasic_includes.h"
+#include "gui.h"
+#include "vip_fr.h"
+#include "multi_touch2.h"
+#include "simple_graphics.h"
+#include "geometry.h"
+#include "gesture.h"
+#include "Const.h"
+#include "level.h"
+#include "game.h"
+#include "queue.h"
+#include "fonts.h"
+
+#include "SysCall.h"          /* System Call layer stuff     */
+
+//#define ENALBE_TOUCH_FILTER
+#define DUAL_FRAME_BUFFER
+
+#define FR_FRAME_0  0x20000000
+#define FR_FRAME_1 (0x20000000 + FRAME_WIDTH*FRAME_HEIGHT*4)
+
+#define FRAME_WIDTH  800
+#define FRAME_HEIGHT 480
+#define DOT_SIZE     6
+
+//#define VALID_POINT(x,y) (((x)>=DOT_SIZE && (x)<FRAME_WIDTH-DOT_SIZE && (y)>=DOT_SIZE && (y)<FRAME_HEIGHT-DOT_SIZE)?TRUE:FALSE)
+
+alt_u32 szPallete[] = {
+    BLACK_24,
+    WHITE_24,
+    0xFFFFFF,
+    0x0000FF,
+    0x00FF00,
+    0xFF0000,
+    0x00FFFF,
+    0xFFFF00,
+    0xFF00FF,
+};
+
+typedef enum{
+    BTN_GESTRUE = 0,
+    BTN_CLEAR,
+    BTN_WHITE,
+    BTN_BLUE,
+    BTN_GREEN,
+    BTN_RED,
+    BTN_SKY,
+    BTN_YELLOW,
+    BTN_PINK,
+    BTN_NUM,
+
+    BTN_NONE
+}BUTTON_ID;
+
+typedef struct{
+    RECT rc;
+    int  color;
+}PALETTE_INFO;
+
+typedef struct{
+	RECT rcPaint;		// Drawing area
+}DESK_INFO;
+
+
+
+VIP_FRAME_READER *pReader;
+DESK_INFO *DeskInfo;
+// Lines
+IMAGE *black_up, *black_down, *black_left, *black_right;
+IMAGE *white_up, *white_down, *white_left,*white_right;
+IMAGE *plyr_white, *plyr_black;
+IMAGE *back;		// Background
+IMAGE *end_white, *end_black;
+
+
+void GUI_DeskInit( LVL *lvl){
+    RectSet(&DeskInfo->rcPaint, DRAW_BORDER, pReader->width-DRAW_BORDER, DRAW_BORDER, pReader->height);
+}
+
+void GUI_DeskDraw(LVL *lvl){
+	printf("DeskDraw - Value of flag2 = %d\n", *flag2);
+	static int InitFlag = true;
+	static IMAGE *menu;
+	if(InitFlag){
+		menu = initimage( "menubutton.dat", 89,98);
+		InitFlag=false;
+	}
+
+    RECT rc;
+    RectCopy(&rc, &DeskInfo->rcPaint);
+
+	displayimage(back, 0, 0, pReader);
+
+    printf("Flagval = %d\n", *flag);
+
+    // Print level selection
+    if((*flag & 0x00000008)==8){
+    	printf("Print level selection\n");
+    	print_lvl_selection(pReader);
+    }
+
+    // Print game
+    else{
+		// Print lines
+		for(int i=0; i<lvl->nbr_lines; i++)
+		{
+			LINE* line = lvl->lines+i;
+			if (line->interrupt)
+			{
+				switch (line->dir){
+				case UP:
+					if (line->color==BLACK)
+						displayChunk(black_up, line->x, line->stop_at, 0, line->stop_at, line->width, 480, pReader);
+					else
+						displayChunk(white_up, line->x, line->stop_at, 0, line->stop_at, line->width, 480, pReader);
+					break;
+				case DOWN:
+					if (line->color==BLACK)
+						displayChunk(black_down, line->x, line->y, 0, 0, line->width, line->stop_at, pReader);
+					else
+						displayChunk(white_down, line->x, line->y, 0, 0, line->width, line->stop_at, pReader);
+					break;
+				case LEFT:
+					if (line->color==BLACK)
+						displayChunk(black_left, line->stop_at, line->y, line->stop_at, 0, 800, line->height, pReader);
+					else
+						displayChunk(white_left, line->stop_at, line->y, line->stop_at, 0, 800, line->height, pReader);
+					break;
+				case RIGHT:
+					if (line->color==BLACK)
+						displayChunk(black_right, line->x, line->y, 0, 0, line->stop_at, line->height, pReader);
+					else
+						displayChunk(white_right, line->x, line->y, 0, 0, line->stop_at, line->height, pReader);
+					break;
+				}
+			}
+			else{
+				switch (line->dir){
+				case UP:
+					if (line->color==BLACK)
+						displayChunk(black_up, line->x, line->y, 0, 0,line->width, line->height, pReader);
+
+						else
+						displayChunk(white_up, line->x, line->y, 0, 0,line->width, line->height, pReader);
+					break;
+				case DOWN:
+					if (line->color==BLACK)
+						displayChunk(black_down, line->x, line->y, 0, 0,line->width, line->height, pReader);
+
+					else
+						displayChunk(white_down, line->x, line->y, 0, 0,line->width, line->height, pReader);
+
+					break;
+				case LEFT:
+					if (line->color==BLACK)
+						displayChunk(black_left, line->x, line->y, 0, 0, line->width, line->height, pReader);
+					else
+						displayChunk(white_left, line->x, line->y, 0, 0, line->width, line->height, pReader);
+					break;
+				case RIGHT:
+					if (line->color==BLACK)
+						displayChunk(black_right, line->x, line->y, 0, 0, line->width, line->height, pReader);
+					else
+						displayChunk(white_right, line->x, line->y, 0, 0, line->width, line->height, pReader);
+					break;
+				}
+			}
+
+		}
+
+		// (under) Draw players at their start positions + their target position
+		for(int j=0;j<lvl->nbr_players;j++)
+		{
+			PLAYER* player = lvl->players+j;
+
+			if (player->color==WHITE) {
+				displayimage(plyr_white, player->x, player->y, pReader);
+				displayimage(end_white, player->fin_x-20, player->fin_y-20, pReader);
+			}
+			else {
+				displayimage(plyr_black, player->x, player->y, pReader);
+				displayimage(end_black, player->fin_x-20, player->fin_y-20, pReader);
+			}
+		}
+
+		// Draw Menu button
+		displayimage(menu, 800-98, 480-89, pReader);
+
+		// Draw selection menu if necessary
+		print_selection_menu(rc,pReader, lvl);
+    }
+    VIPFR_ActiveDrawFrame(pReader);
+
+}
+
+bool IsContinuedPoint(POINT *ptPre, POINT *ptNew){
+    bool bYes = TRUE;
+    const int nMax = 50;
+    if (abs(ptPre->x - ptNew->x) > nMax)
+        bYes = FALSE;
+    else if (abs(ptPre->y - ptNew->y) > nMax)
+        bYes = FALSE;
+
+    return bYes;
+}
+
+// Move player towards direction of touched point (X, Y) by 10px
+// (record changes in the LVL structure)
+void incrCoordinate(PLAYER *plyr, int X, int Y) {
+
+	int dist_x = (X-20)-plyr->x;
+	int dist_y = (Y-20)-plyr->y;
+
+	if (abs(dist_x) > abs(dist_y)) {
+		// Right
+		if (dist_x > 0) {
+			printf("Horizontal right move\n");
+			if(plyr->x+3<=800-40)
+				plyr->x = plyr->x+3;
+			if (dist_y > 0 && plyr->y+1<=480-40)
+				plyr->y = plyr->y+1;
+			else if(dist_y < 0 && plyr->y-1>=0)
+				plyr->y = plyr->y-1;
+		}
+		// Left
+		else {
+			printf("Horizontal left move\n");
+			if(plyr->x-3>=0)
+				plyr->x = plyr->x-3;
+			if (dist_y > 0 && plyr->y+1<=480-40)
+					plyr->y = plyr->y+1;
+				else if(dist_y < 0 && plyr->y-1>=0)
+					plyr->y = plyr->y-1;
+		}
+	}
+	// Vertical move
+	else {
+		// Down
+		if (dist_y > 0) {
+			printf("Vertical down move\n");
+			if(plyr->y+3<=480-40)
+				plyr->y = plyr->y+3;
+			if (dist_x > 0 && plyr->x+1<=800-40)
+				plyr->x = plyr->x+1;
+			else if (dist_x < 0 && plyr->x-1>=0)
+				plyr->x = plyr->x-1;
+		}
+		// Up
+		else {
+			printf("Vertical up move\n");
+			if(plyr->y-3>=0)
+				plyr->y = plyr->y-3;
+			if (dist_x > 0 && plyr->x+1<=800-40)
+				plyr->x = plyr->x+1;
+			else if (dist_x < 0 && plyr->x-1>=0)
+				plyr->x = plyr->x-1;
+		}
+	}
+}
+
+void check(LVL *lvl){
+	pos_correlator(lvl);
+	if(success(lvl)){
+		*flag = (*flag) | 0x00000004;
+		printf("Victory detected by own player\n");
+	}
+}
+
+void GUI_checkNDraw(LVL *lvl, VIP_FRAME_READER *pReader, DESK_INFO *DeskInfo) {
+	// 1. Check if player has crushed a line
+	//	 (records line changes in the LVL structure + update defeat if necessary)
+	pos_correlator(lvl);
+
+	// 2. Check if victory of both players
+	if(success(lvl)){
+		*flag = (*flag) | 0x00000004;
+		printf("Victory detected by own player\n");
+	}
+
+	printf("CheckNDraw - Value of flag2 = %d\n", *flag2);
+
+	// 3. Redraw whole screen according to changes in the LVL structure
+	SEM_t    *PtrSem;
+	PtrSem = SEMopen("ImSemaphore");
+	MBX_t    *PrtMbx;
+	PrtMbx = MBXopen("ImMailbox", 1);
+
+	MBXput(PrtMbx, (intptr_t *)lvl, -1);
+
+	SEMwait(PtrSem, -1);    // -1 = Infinite blocking
+
+	SEMreset(PtrSem);
+
+}
+
+void setCoordinate(PLAYER *plyr, uint16_t X, uint16_t Y){
+	plyr->x = X;
+	plyr->y = Y;
+}
+
+
+void GUI(MTC2_INFO *pTouch){
+    // video
+	bool GO=true;
+    static int InitFlag = true;
+    LVL lvl;
+    lvl.players = NULL;
+    lvl.lines = NULL;
+    static uint16_t X1, Y1;
+    static uint16_t XR = 1;
+    static uint16_t YR = 1;
+    static POINT Pt1, PtR;
+    static alt_u8 Event, TouchNum;
+    static const int nDotSize = DOT_SIZE;
+    static RECT rcTouch;
+	static RECT rcMenu;//added
+	static RECT rcPlay1;//added
+	static RECT rcLevel1,rcLevel2;//added
+	static RECT rcReset1,rcReset2;//added
+
+
+/*#ifdef ENALBE_TOUCH_FILTER
+    static POINT LastPt1, LastPt2;
+    static alt_u32 LastTimePt1=0,LastTimePt2=0;
+    static const alt_u32 ContinuedTime = alt_ticks_per_second()/50;
+#endif*/
+
+    if (InitFlag) {
+
+        #ifdef DUAL_FRAME_BUFFER
+            pReader =  VIPFR_Init((alt_u32 *)(ALT_LWFPGASLVS_OFST + ALT_VIP_VFR_0_BASE), (void *)FR_FRAME_0, (void *)FR_FRAME_1, FRAME_WIDTH, FRAME_HEIGHT);
+        #else
+            pReader =  VIPFR_Init((alt_u32 *)(ALT_LWFPGASLVS_OFST + ALT_VIP_VFR_0_BASE), (void *)FR_FRAME_0, (void *)FR_FRAME_0, FRAME_WIDTH, FRAME_HEIGHT);
+        #endif // DUAL_FRAME_BUFFER
+        VIPFR_Go(pReader, TRUE);
+
+        GUI_DeskInit(&lvl); // Sets the infos inside the DESK_INFO structure (rcPaint)
+        GUI_DeskDraw(&lvl); // Draws the drawable area
+
+        DESK_INFO pDeskInfo=*DeskInfo;
+        RectCopy(&rcTouch, &pDeskInfo.rcPaint);
+        RectInflate(&rcTouch, -nDotSize-2, -nDotSize-2);
+
+		RectSet(&rcMenu, SCREEN_WIDTH-98, SCREEN_WIDTH, pDeskInfo.rcPaint.bottom-89, pDeskInfo.rcPaint.bottom);
+
+		RectSet(&rcPlay1, 225, 554, 171,222);
+		RectSet(&rcReset1, 225, 554,244,295);
+		RectSet(&rcLevel1, 225, 554,317,368);
+
+		RectSet(&rcReset2, 225, 554,186,236);
+		RectSet(&rcLevel2, 225, 554,277,328);
+
+		init_im_lvl(1);
+        InitFlag = false;
+    }
+
+    int static prevflag=0;
+    int static prevflag2=0;
+    int static prevlvl2=0;
+    int var=0;
+    // While game hasn't ended
+    while (GO)
+    {
+    	if(*flag!=prevflag || *flag2!=prevflag2){
+    		GUI_DeskDraw(&lvl);
+    		prevflag=*flag;
+    		prevflag2=*flag2;
+
+    	}
+    	if( *lvl2!=prevlvl2 ){
+    		*lvl1=*lvl2;
+    		if(*lvl1!=0){
+    			change_lvl(&lvl,*lvl1);
+    			init_im_lvl(*lvl1);
+    		}
+			GUI_DeskDraw(&lvl);
+			prevlvl2=*lvl2;
+		}
+    	/*
+    	if(*flag==0 && *flag2==0){
+    		var=0;
+    	}
+
+        if(*flag!=8) {
+        	check(&lvl);
+        }
+
+    	// Coordination between player playing and other player
+    	if(*flag==0 && (*flag2==4 || *flag2==2 || *flag2==1)){
+    		if (var==0) {
+    			GUI_DeskDraw(&lvl);
+    			var=1;
+    		}
+    	}
+    	*/
+
+    	// When touch event, moves the player 1 towards the touched position
+    	if (MTC2_GetStatus(pTouch, &Event, &TouchNum, &X1, &Y1))
+        {
+            PtSet(&Pt1, X1, Y1);
+        	printf("goflagval:%x\n",*flag);
+
+        	// Inside level selection menu
+            if((*flag & 0x00000008)==8){
+            	printf("GUI: in lvl selection\n");
+            	in_lvl_sel_rect(&Pt1, &lvl, pReader);		// Change current level in LVL structure
+				GUI_DeskDraw(&lvl);	// Draw accordingly
+				*flag=*flag & 0xFFFFFFF8;	// Reset the three right flags
+				*flag2=*flag2 & 0xFFFFFFF8;	// Reset the three right flags
+
+            }
+            // Inside game
+            else{
+            	// Menu button touched
+            	if (TouchNum >= 1 && IsPtInRect(&Pt1, &rcMenu))
+				{
+					*flag=(*flag) | 0x00000001;
+					printf("GUI: Touch event Menu Open \n");
+					GUI_DeskDraw(&lvl);	// Draw accordingly
+				}
+            	//if not in break
+				else if(*flag==0 && *flag2==0){
+					if (TouchNum >= 1 && IsPtInRect(&Pt1, &rcTouch))
+					{
+						PLAYER *ownPlyr = (&lvl)->players+1;	// Resp players+1 for other board
+
+						incrCoordinate(ownPlyr, X1, Y1);			// Move own player
+						GUI_checkNDraw(&lvl, pReader, &DeskInfo);	// Draw accordingly
+
+						// Coordinate of our own player after touch event has been treated
+						uint32_t XS = ownPlyr->x;
+						uint32_t YS = ownPlyr->y;
+
+						MTX_t	*TMtx = MTXopen("TXData Mtx");
+						MTXlock(TMtx, -1);
+
+						*txdata =  *lvl1|(*flag<<24) | (XS << 12) | YS;	// Warn other player
+
+						MTXunlock(TMtx);
+					}
+				}
+				else{
+					//if lost or win
+					if((*flag & 0x00000002)==2 || (*flag2 & 0x00000002)==2 || (*flag & 0x00000004)==4 || (*flag2 & 0x00000004)==4){
+						printf("win or loss detected by one of players \n");
+						if(TouchNum >= 1 && IsPtInRect(&Pt1, &rcLevel2)){
+							printf("LEVEL selected in the menu\n");
+							*flag=*flag | 0x00000008;
+							*flag=*flag & 0xFFFFFFF8;	// Reset the three right flags
+							GUI_DeskDraw(&lvl);	// Draw accordingly
+						    TSKsleep(OS_MS_TO_TICK(200));
+						}
+						else if(TouchNum >= 1 && IsPtInRect(&Pt1, &rcReset2)){
+							printf("RESET selected in the menu\n");
+							reset_lvl(&lvl);
+							GUI_DeskDraw(&lvl);	// Draw accordingly
+							*flag=*flag & 0xFFFFFFF0;	// Reset the four right flags
+							TSKsleep(OS_MS_TO_TICK(200));
+						}
+
+					}
+					else{
+						if(!(*flag2 & 0x00000001)==1 && ((*flag2 & 0x00000001)==0)){
+							if(TouchNum >= 1 && IsPtInRect(&Pt1, &rcLevel1)){
+								printf("LEVEL selected in the menu\n");
+								*flag=*flag | 0x00000008;
+								*flag=*flag & 0xFFFFFFF8;	// Reset the three right flags
+								GUI_DeskDraw(&lvl);	// Draw accordingly
+								TSKsleep(OS_MS_TO_TICK(200));
+							}
+							else if(TouchNum >= 1 && IsPtInRect(&Pt1, &rcReset1)){
+								printf("RESET selected in the menu\n");
+								reset_lvl(&lvl);
+								GUI_DeskDraw(&lvl);	// Draw accordingly
+								*flag=*flag & 0xFFFFFFF0;	// Reset the four right flags
+								TSKsleep(OS_MS_TO_TICK(200));
+							}
+							else if(TouchNum >= 1 && IsPtInRect(&Pt1, &rcPlay1) && (*flag & 0x00000001)==1){
+								printf("PLAY selected in the menu\n");
+								GUI_DeskDraw(&lvl);	// Draw accordingly
+								*flag=*flag & 0xFFFFFFF0;	// Reset the four right flags
+								TSKsleep(OS_MS_TO_TICK(200));
+							}
+						}
+					}
+				}
+    		MTC2_ClearEvent(pTouch);
+            }
+
+        }
+        // When SPI event (i.e. received msg from other board)
+    	// Moves the player 2 towards the touched position
+    	if(*flag==0 && *flag2==0){
+    		if(SPI_GetStatus(&XR, &YR)){
+    			PtSet(&PtR, XR, YR);
+    			if (IsPtInRect(&PtR, &rcTouch)){
+    				PLAYER *otherPlyr = (&lvl)->players;	// Resp players for other board
+    				setCoordinate(otherPlyr, XR, YR);
+    				GUI_checkNDraw(&lvl, pReader, &DeskInfo);
+    			}
+    		}
+    	}
+
+    	*txdata =  (*flag<<28) | *txdata; // Warn other player
+    }
+
+}
+
+void in_lvl_sel_rect(POINT* Pt1, LVL* lvl ,VIP_FRAME_READER *pReader ){
+	printf("in_lvl_sel_rect\n");
+	RECT rcLevel1,rcLevel2,rcLevel3,rcLevel4,rcLevel5,rcLevel6;
+	RECT rc;
+	RectSet(&rc, DRAW_BORDER, pReader->width-DRAW_BORDER, DRAW_BORDER, pReader->height-2*DRAW_BORDER-MENU_HEIGHT);
+	RectSet(&rcLevel1,39,241,166,268);
+	RectSet(&rcLevel2,299,501,166,268);
+	RectSet(&rcLevel3,553,756,166,268);
+	RectSet(&rcLevel4,39,241,334,436);
+	RectSet(&rcLevel5,299,501,334,436);
+	RectSet(&rcLevel6,553,756,334,436);
+	new_lvl=1;
+	if (IsPtInRect(Pt1, &rcLevel1))
+	{
+		printf("GUI: Touch event lvl 1 selected \n");
+		*flag=*flag & 0xFFFFFFF0;//reset the four right flags
+		change_lvl(lvl,1);
+		init_im_lvl(1);
+		*lvl1=1;
+	}
+	if (IsPtInRect(Pt1, &rcLevel2))
+		{
+			printf("GUI: Touch event lvl 2 selected \n");
+			*flag=*flag & 0xFFFFFFF0;//reset the four right flags
+			change_lvl(lvl,2);
+			init_im_lvl(2);
+			*lvl1=2;
+		}
+	if (IsPtInRect(Pt1, &rcLevel3))
+		{
+			printf("GUI: Touch event lvl 3 selected \n");
+			*flag=*flag & 0xFFFFFFF0;//reset the four right flags
+			change_lvl(lvl,3);
+			printf("flagval:%d\n",*flag);
+			init_im_lvl(3);
+			*lvl1=3;
+		}
+	if (IsPtInRect(Pt1, &rcLevel4))
+		{
+			printf("GUI: Touch event lvl 4 selected \n");
+			*flag=*flag & 0xFFFFFFF0;//reset the four right flags
+			change_lvl(lvl,4);
+			init_im_lvl(4);
+			*lvl1=4;
+		}
+	if (IsPtInRect(Pt1, &rcLevel5))
+		{
+			printf("GUI: Touch event lvl 5 selected \n");
+			*flag=*flag & 0xFFFFFFF0;//reset the four right flags
+			change_lvl(lvl,5);
+			init_im_lvl(5);
+			*lvl1=5;
+		}
+	if (IsPtInRect(Pt1, &rcLevel6))
+		{
+			printf("GUI: Touch event lvl 6 selected \n");
+			*flag=*flag & 0xFFFFFFF0;//reset the four right flags
+			change_lvl(lvl,6);
+			init_im_lvl(6);
+			*lvl1=6;
+		}
+}
+void init_im_lvl(int lvl){
+    static int InitFlag = true;
+
+    // FARWEST (black = indian, white = sherif)
+    static IMAGE *back_FAR, *plyr_black_FAR, *plyr_white_FAR, *black_vert_FAR, *white_vert_FAR, *black_hor_FAR, *white_hor_FAR, *end_white_FAR, *end_black_FAR;
+
+    // BATMAN (black = batman, white = robin)
+    static IMAGE *back_BAT, *plyr_black_BAT, *plyr_white_BAT, *black_vert_BAT, *white_hor_BAT, *end_black_BAT, *end_white_BAT;
+
+    // BASIC (black = blue, white = orange)
+    static IMAGE *back_BASIC, *plyr_black_BASIC, *plyr_white_BASIC, *black_up_BASIC, *black_down_BASIC, *black_right_BASIC, *black_left_BASIC, *white_up_BASIC, *white_down_BASIC, *white_right_BASIC, *white_left_BASIC, *end_black_BASIC, *end_white_BASIC;
+
+    // BOB (black = patrick, white = bob)
+    static IMAGE *back_BOB, *plyr_black_BOB, *plyr_white_BOB, *black_vert_BOB, *black_hor_BOB, *white_vert_BOB, *white_hor_BOB, *end_black_BOB, *end_white_BOB;
+
+    // MANGA (black = jdd, white = ludo)
+    static IMAGE *back_MANGA, *plyr_black_MANGA, *plyr_white_MANGA, *black_vert_MANGA, *black_hor_MANGA, *white_vert_MANGA, *white_hor_MANGA, *end_black_MANGA, *end_white_MANGA;
+
+    // SPACE (black = blue, white = purple)
+    static IMAGE *back_SPACE, *plyr_black_SPACE, *plyr_white_SPACE, *black_vert_SPACE, *black_hor_SPACE, *white_vert_SPACE, *white_hor_SPACE, *end_black_SPACE, *end_white_SPACE;
+    if(InitFlag){
+    	// Design elements
+
+    	   // FARWEST (black = indian, white = sherif)
+ 		   back_FAR = initimage("farwest.dat", 480, 800);
+
+ 		   plyr_black_FAR = initimage( "EspritGrandChienLoup.dat",40, 40);
+ 		   plyr_white_FAR = initimage("BountyHunter.dat",40, 40);
+
+ 		   black_vert_FAR = initimage("indienv2.dat", 480, 39);
+ 		   white_vert_FAR = initimage("sherifv2.dat", 480, 39);
+ 		   black_hor_FAR = initimage("indianh.dat", 39, 800);
+ 		   white_hor_FAR = initimage("sherifh.dat", 39, 800);
+
+ 		   end_black_FAR = initimage("coiffe.dat", 44, 44);
+ 		   end_white_FAR = initimage("dollar.dat", 44, 44);
+
+
+		   // BATMAN (black = batman, white = robin)
+    	   back_BAT = initimage("BatTroll.dat", 480, 800);
+
+    	   plyr_black_BAT = initimage("batmangreen.dat", 40, 40);
+    	   plyr_white_BAT = initimage("robingreen.dat", 40, 40);
+
+    	   black_vert_BAT = initimage("batlinev.dat", 480, 39);
+    	   white_hor_BAT = initimage("RoundRobin.dat", 39, 800);
+
+    	   end_black_BAT = initimage("batgoal.dat", 44, 44);
+    	   end_white_BAT = initimage("robingoal.dat", 44, 44);
+
+
+    	   // BASIC (black = blue, white = orange)
+    	   back_BASIC = initimage( "back2.dat", 480, 800);
+
+    	   plyr_black_BASIC = initimage("plyr_blue.dat", 40, 40);
+    	   plyr_white_BASIC = initimage("plyr_orange.dat", 40, 40);
+
+    	   black_right_BASIC = initimage("black_right.dat", 39, 800);
+		   black_left_BASIC = initimage("black_left.dat", 39, 800);
+		   black_up_BASIC = initimage("black_up.dat", 480, 39);
+		   black_down_BASIC = initimage("black_down.dat", 480, 39);
+		   white_right_BASIC = initimage("white_right.dat", 39, 800);
+		   white_left_BASIC = initimage("white_left.dat", 39, 800);
+		   white_up_BASIC = initimage("white_up.dat", 480, 39);
+		   white_down_BASIC = initimage("white_down.dat", 480, 39);
+
+		   end_black_BASIC = initimage("end_blue.dat", 44, 44);
+		   end_white_BASIC = initimage("end_orange.dat", 44, 44);
+
+
+		   // BOB (black = patrick, white = bob)
+		   back_BOB = initimage("Spongebobbackground.dat", 480, 800);
+
+		   plyr_black_BOB = initimage("patrickgreen.dat",40, 40);
+		   plyr_white_BOB = initimage("bobgreen.dat", 40, 40);
+
+		   black_vert_BOB = initimage("patrickv.dat", 480, 39);
+		   black_hor_BOB = initimage("patrickh.dat", 39, 800);
+		   white_vert_BOB = initimage("boblinev.dat", 480, 39);
+		   white_hor_BOB = initimage("boblineh.dat", 39, 800);
+
+		   end_black_BOB = initimage("patty.dat", 44, 44);
+		   end_white_BOB = initimage("gary.dat", 44, 44);
+
+
+		   // MANGA (black = jdd, white = ludo)
+		   back_MANGA = initimage("FusionDance.dat", 480, 800);
+
+		   plyr_black_MANGA = initimage("jdd.dat", 40, 40);
+		   plyr_white_MANGA = initimage("ludo.dat", 40, 40);
+
+		   black_vert_MANGA = initimage("UserGuideVerticale.dat", 480, 39);
+		   black_hor_MANGA = initimage("UserGuideHorizontal.dat", 39, 800);
+		   white_vert_MANGA = initimage("ToolLineVerticale.dat", 480, 39);
+		   white_hor_MANGA = initimage("ToolLineHorizontale.dat", 39, 800);
+
+		   end_black_MANGA = initimage("jddgoal.dat", 44, 44);
+		   end_white_MANGA = initimage("ludogoal.dat", 44, 44);
+
+		    // SPACE (black = blue, white = purple)
+		   back_SPACE = initimage("back_space.dat", 480, 800);
+
+		   plyr_black_SPACE = initimage("plyr_black_space.dat", 40, 40);
+		   plyr_white_SPACE = initimage("plyr_white_space.dat", 40, 40);
+
+		   black_vert_SPACE = initimage("black_vert_space.dat", 480, 39);
+		   black_hor_SPACE = initimage("black_hor_space.dat", 39, 800);
+		   white_vert_SPACE = initimage("white_vert_space.dat", 480, 39);
+		   white_hor_SPACE = initimage("white_hor_space.dat", 39, 800);
+
+		   end_black_SPACE = initimage("end_black_space.dat", 44, 44);
+		   end_white_SPACE = initimage("end_white_space.dat", 44, 44);
+
+    	InitFlag=false;
+    }
+	switch(lvl) {
+	   // FARWEST (three vertical lines)
+	   case 1:
+		   back = back_FAR;
+
+		   plyr_black = plyr_black_FAR;
+		   plyr_white = plyr_white_FAR;
+
+		   black_up = black_vert_FAR;
+		   black_down = black_vert_FAR;
+		   white_up = white_vert_FAR;
+		   white_down = white_vert_FAR;
+		   black_left = black_hor_FAR;
+		   black_right = black_hor_FAR;
+		   white_left = white_hor_FAR;
+		   white_right = white_hor_FAR;
+
+		   end_black = end_black_FAR;
+		   end_white = end_white_FAR;
+
+	      break;
+	   // BATMAN (One vertical line, one horizontal line)
+	   case 2:
+		   back = back_BAT;
+
+		   plyr_black = plyr_black_BAT;
+		   plyr_white = plyr_white_BAT;
+
+		   black_up = black_vert_BAT;
+		   black_down = black_vert_BAT;
+		   white_left = white_hor_BAT;
+		   white_right = white_hor_BAT;
+
+		   end_black = end_black_BAT;
+		   end_white = end_white_BAT;
+
+		  break;
+	   // BASIC (complicated level)
+	   case 3:
+		   back = back_BASIC;
+
+		   plyr_black = plyr_black_BASIC;
+		   plyr_white = plyr_white_BASIC;
+
+		   black_right = black_right_BASIC;
+		   black_left = black_left_BASIC;
+		   black_up = black_up_BASIC;
+		   black_down = black_down_BASIC;
+
+		   white_right = white_right_BASIC;
+		   white_left = white_left_BASIC;
+		   white_up = white_up_BASIC;
+		   white_down = white_down_BASIC;
+
+		   end_black = end_black_BASIC;
+		   end_white = end_white_BASIC;
+
+	   	  break;
+
+	   // BOB (cadre)
+	   case 4:
+		   back = back_BOB;
+
+		   plyr_black = plyr_black_BOB;
+		   plyr_white = plyr_white_BOB;
+
+		   black_up = black_vert_BOB;
+		   black_down = black_vert_BOB;
+		   black_left = black_hor_BOB;
+		   black_right = black_hor_BOB;
+		   white_up = white_vert_BOB;
+		   white_down = white_vert_BOB;
+		   white_left = white_hor_BOB;
+		   white_right = white_hor_BOB;
+
+		   end_black = end_black_BOB;
+		   end_white = end_white_BOB;
+		  break;
+
+	   // MANGA
+	   case 5:
+		   back = back_MANGA;
+
+		   plyr_black = plyr_black_MANGA;
+		   plyr_white = plyr_white_MANGA;
+
+		   black_up = black_vert_MANGA;
+		   black_down = black_vert_MANGA;
+		   black_left = black_hor_MANGA;
+		   black_right = black_hor_MANGA;
+		   white_up = white_vert_MANGA;
+		   white_down = white_vert_MANGA;
+		   white_left = white_hor_MANGA;
+		   white_right = white_hor_MANGA;
+
+		   end_black = end_black_MANGA;
+		   end_white = end_white_MANGA;
+		   break;
+	   case 6:
+		   back = back_SPACE;
+
+		   plyr_black = plyr_black_SPACE;
+		   plyr_white = plyr_white_SPACE;
+
+		   black_up = black_vert_SPACE;
+		   black_down = black_vert_SPACE;
+		   black_left = black_hor_SPACE;
+		   black_right = black_hor_SPACE;
+		   white_up = white_vert_SPACE;
+		   white_down = white_vert_SPACE;
+		   white_left = white_hor_SPACE;
+		   white_right = white_hor_SPACE;
+
+		   end_black = end_black_SPACE;
+		   end_white = end_white_SPACE;
+		   break;
+
+	}
+}
+// Mutex-handled access to lastMsg (returns true if other player position has changed)
+bool SPI_GetStatus(uint16_t *XR, uint16_t *YR){
+	bool bChange = false;
+
+	static uint16_t prevX = 0;
+	static uint16_t prevY = 0;
+	static int prevFlag = 0;
+
+	MTX_t *RMtx = MTXopen("RXData Mtx");
+	MTXlock(RMtx, -1);
+
+	if ((lastMsg->xcoord!=prevX)|(lastMsg->ycoord!=prevY)|*flag!=prevFlag) {
+		*XR = lastMsg->xcoord;
+		*YR = lastMsg->ycoord;
+		prevX = *XR;
+		prevY = *YR;
+		prevFlag=*flag;
+		bChange = true;
+	}
+
+	MTXunlock(RMtx);
+
+	return bChange;
+}
+
+void print_lvl_selection(VIP_FRAME_READER *pReader ){
+    static int InitFlag = true;
+    static IMAGE *back_menu;
+    if(InitFlag){
+    	back_menu = initimage( "levelmenu.dat", 480, 800);
+    	InitFlag=false;
+    }
+	displayimage(back_menu, 0, 0, pReader);
+}
+
+void print_selection_menu(RECT rc,VIP_FRAME_READER *pReader, LVL *lvl){
+	static int InitFlag = true;
+	static IMAGE *menu,*lost,*win,*wait;
+	if(InitFlag){
+		menu = initimage( "break.dat",  320,451);
+		lost = initimage( "lost.dat", 320,451);
+		win = initimage( "win.dat", 320,451);
+		wait = initimage( "wait.dat",320,451);
+		InitFlag=false;
+	}
+	if((*flag & 0x00000001)==1){
+		printf("Draw menu case\n");
+		displayimage(menu,  174, 79, pReader);
+	}
+
+	if((*flag2 & 0x00000001)==1  ){
+		printf("Draw pause triggered by other player case\n");
+		displayimage(wait, 174, 79, pReader);
+	}
+
+	if((*flag & 0x00000002)==2 || (*flag2 & 0x00000002)==2){
+		printf("Draw lost case\n");
+		displayimage(lost, 174, 79, pReader);
+		reset_lvl(lvl);
+	    TSKsleep(OS_MS_TO_TICK(200));
+	}
+
+	if((*flag & 0x00000004)==4 || (*flag2 & 0x00000004)==4){
+		printf("Draw win case\n");
+		displayimage(win, 174, 79, pReader);
+		reset_lvl(lvl);
+	    TSKsleep(OS_MS_TO_TICK(200));
+
+	}
+}

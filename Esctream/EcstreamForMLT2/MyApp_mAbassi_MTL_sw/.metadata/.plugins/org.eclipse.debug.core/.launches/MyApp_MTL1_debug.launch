@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.arm.debugger.launcher2">
+<mapAttribute key="AverageDurationTracker">
+<mapEntry key="*Fetching Data Model" value="5922952"/>
+<mapEntry key="*list global low level symbols" value="8610857"/>
+<mapEntry key="*loading values from target" value="24876028"/>
+<mapEntry key="*updating variables" value="2789035"/>
+<mapEntry key="AddEventObserver" value="7145649"/>
+<mapEntry key="Evaluate" value="16275949"/>
+<mapEntry key="Retrieving globals list" value="50218741"/>
+<mapEntry key="break" value="25942379"/>
+<mapEntry key="compute execution mode" value="2986676"/>
+<mapEntry key="continue" value="49313082"/>
+<mapEntry key="core" value="7309025"/>
+<mapEntry key="disable" value="68361404"/>
+<mapEntry key="disassemble" value="110495463"/>
+<mapEntry key="get capabilities" value="316754467"/>
+<mapEntry key="get execution addresss" value="17071220"/>
+<mapEntry key="get source lines" value="550771"/>
+<mapEntry key="initialize command help" value="64106140"/>
+<mapEntry key="interrupt" value="55221274"/>
+<mapEntry key="list breakpoint options" value="1219299"/>
+<mapEntry key="list breakpoints" value="3192221"/>
+<mapEntry key="list instruction sets" value="1265522"/>
+<mapEntry key="list signals" value="9138458"/>
+<mapEntry key="list watchpoint options" value="2208176"/>
+<mapEntry key="list watchpoints" value="2011130"/>
+<mapEntry key="loadfile" value="14796862"/>
+<mapEntry key="next" value="81238604"/>
+<mapEntry key="remove" value="3083273"/>
+<mapEntry key="set CWD" value="7774769"/>
+<mapEntry key="set breakpoint properties" value="9737149"/>
+<mapEntry key="set debug-from" value="4667350"/>
+<mapEntry key="source altera_target_check.py" value="1007411923"/>
+<mapEntry key="source debug-nonhosted.ds" value="5787845210"/>
+<mapEntry key="start" value="96640318"/>
+<mapEntry key="step" value="52277481"/>
+<mapEntry key="target reset" value="1210868700"/>
+<mapEntry key="toggleBreakpoint" value="35990197"/>
+<mapEntry key="waitForTargetToStop" value="13408900"/>
+</mapAttribute>
+<intAttribute key="DEBUG_TAB..RESOURCES.COUNT" value="0"/>
+<intAttribute key="FILES.CONNECT_TO_GDB_SERVER.RESOURCES.COUNT" value="0"/>
+<intAttribute key="FILES.DEBUG_EXISTING_ANDROID.RESOURCES.COUNT" value="0"/>
+<listAttribute key="FILES.DEBUG_RESIDENT_ANDROID"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_ANDROID.RESOURCES.0.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_ANDROID.RESOURCES.0.VALUE" value=""/>
+<intAttribute key="FILES.DEBUG_RESIDENT_ANDROID.RESOURCES.COUNT" value="1"/>
+<listAttribute key="FILES.DEBUG_RESIDENT_APP"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.0.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.0.VALUE" value=""/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.1.TYPE" value="APPLICATION_ON_TARGET"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.1.VALUE" value=""/>
+<intAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.COUNT" value="2"/>
+<listAttribute key="FILES.DOWNLOAD_AND_DEBUG">
+<listEntry value="ON_DEMAND_LOAD"/>
+<listEntry value="ALSO_LOAD_SYMBOLS"/>
+</listAttribute>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.TYPE" value="TARGET_DOWNLOAD_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.VALUE" value=""/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.VALUE" value=""/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.VALUE" value=""/>
+<intAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.COUNT" value="3"/>
+<listAttribute key="FILES.DOWNLOAD_DEBUG">
+<listEntry value="ON_DEMAND_LOAD"/>
+<listEntry value="ALSO_LOAD_SYMBOLS"/>
+</listAttribute>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.TYPE" value="TARGET_DOWNLOAD_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.VALUE" value=""/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.VALUE" value=""/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.VALUE" value=""/>
+<intAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.COUNT" value="3"/>
+<intAttribute key="FILES.DOWNLOAD_DEBUG_ANDROID.RESOURCES.COUNT" value="0"/>
+<listAttribute key="FILES.ICE_DEBUG">
+<listEntry value="ON_DEMAND_LOAD"/>
+<listEntry value="ALSO_LOAD_SYMBOLS"/>
+</listAttribute>
+<stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+<stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.VALUE" value=""/>
+<intAttribute key="FILES.ICE_DEBUG.RESOURCES.COUNT" value="1"/>
+<listAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE">
+<listEntry value="ON_DEMAND_LOAD"/>
+<listEntry value="ALSO_LOAD_SYMBOLS"/>
+</listAttribute>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE.RESOURCES.0.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE.RESOURCES.0.VALUE" value=""/>
+<intAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE.RESOURCES.COUNT" value="1"/>
+<listAttribute key="FILES.ICE_DEBUG_WITH_TRACE">
+<listEntry value="ON_DEMAND_LOAD"/>
+<listEntry value="ALSO_LOAD_SYMBOLS"/>
+</listAttribute>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_TRACE.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_TRACE.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_TRACE.RESOURCES.0.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_TRACE.RESOURCES.0.VALUE" value=""/>
+<intAttribute key="FILES.ICE_DEBUG_WITH_TRACE.RESOURCES.COUNT" value="1"/>
+<stringAttribute key="FILES.SELECTED_DEBUG_OPEATION" value="ICE_DEBUG"/>
+<stringAttribute key="HOST_WORKING_DIR" value="${workspace_loc}"/>
+<booleanAttribute key="HOST_WORKING_DIR_USE_DEFAULT" value="true"/>
+<booleanAttribute key="KEY_COMMANDS_AFTER_CONNECT" value="false"/>
+<stringAttribute key="KEY_COMMANDS_AFTER_CONNECT_TEXT" value=""/>
+<booleanAttribute key="RSE_USE_HOSTNAME" value="true"/>
+<stringAttribute key="TCP_DISABLE_EXTENDED_MODE" value="true"/>
+<booleanAttribute key="TCP_KILL_ON_EXIT" value="false"/>
+<booleanAttribute key="VFS_ENABLED" value="true"/>
+<stringAttribute key="VFS_LOCAL_DIR" value="${workspace_loc}"/>
+<stringAttribute key="VFS_REMOTE_MOUNT" value="/writeable"/>
+<stringAttribute key="breakpoints" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;breakpoints&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;108&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;108&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;53&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;53&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;98&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;98&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;94&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;94&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;23&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;23&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;93&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;93&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;49&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;49&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;47&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;47&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;45&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/Main_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\Main_mAbassi.c&quot; line=&quot;45&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;26&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;26&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;38&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;38&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;43&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_sw/MyApp_mAbassi/src/MyApp_mAbassi.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\src\MyApp_mAbassi.c&quot; line=&quot;43&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_Test_sw/MyApp_MTL1/src/MyApp_MTL.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_MTL1\src\MyApp_MTL.c&quot; line=&quot;90&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; address=&quot;S:0x02000470&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_Test_sw/MyApp_MTL1/src/MyApp_MTL.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_MTL1\src\MyApp_MTL.c&quot; line=&quot;90&quot; function=&quot;mtc_CallbackInterrupt&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;1&quot; enabled=&quot;false&quot; version=&quot;2&quot; address=&quot;S:0x02000474&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_Test_sw/MyApp_MTL1/src/MyApp_MTL.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_MTL1\src\MyApp_MTL.c&quot; line=&quot;90&quot; function=&quot;mtc_CallbackInterrupt&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_Test_sw/MyApp_MTL1/painter/gui.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_MTL1\painter\gui.c&quot; line=&quot;361&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; address=&quot;S:0x0200260C&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_Test_sw/MyApp_MTL1/painter/gui.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_MTL1\painter\gui.c&quot; line=&quot;362&quot; function=&quot;GUI&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;1&quot; enabled=&quot;false&quot; version=&quot;2&quot; address=&quot;S:0x02002640&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_Test_sw/MyApp_MTL1/painter/gui.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_MTL1\painter\gui.c&quot; line=&quot;362&quot; function=&quot;GUI&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;2&quot; enabled=&quot;false&quot; version=&quot;2&quot; address=&quot;S:0x02002648&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_Test_sw/MyApp_MTL1/painter/gui.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_MTL1\painter\gui.c&quot; line=&quot;362&quot; function=&quot;GUI&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;3&quot; enabled=&quot;false&quot; version=&quot;2&quot; address=&quot;S:0x02002650&quot; debugFile=&quot;W:/MesProjets/DE10-Nano/MyApps/MyApp_mAbassi/MyApp_mAbassi_Test_sw/MyApp_MTL1/painter/gui.c&quot; hostFile=&quot;W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_MTL1\painter\gui.c&quot; line=&quot;362&quot; function=&quot;GUI&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&lt;/breakpoints&gt;&#10;"/>
+<listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.DisassemblyView.addresses">
+<listEntry value="&lt;Next Instruction&gt;"/>
+</listAttribute>
+<listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.DisassemblyView.ranges">
+<listEntry value="100"/>
+</listAttribute>
+<stringAttribute key="config_db_activity_name" value="Debug Cortex-A9x2 SMP"/>
+<stringAttribute key="config_db_connection_keys" value="rvi_address target_initialization_script dtsl_config dtsl_tracecapture_option dtsl_config_script eventviewer_tracesource config_file setup TCP_KILL_ON_EXIT TCP_DISABLE_EXTENDED_MODE"/>
+<stringAttribute key="config_db_connection_type" value="Bare Metal Debug"/>
+<stringAttribute key="config_db_platform_name" value="Altera - Cyclone V SoC (Dual Core)"/>
+<stringAttribute key="config_db_project_type" value="Bare Metal Debug"/>
+<stringAttribute key="config_db_project_type_id" value="BARE_METAL"/>
+<stringAttribute key="config_db_taxonomy_id" value="/platform/altera/cyclonevsoc_dualcore_"/>
+<stringAttribute key="config_file" value="CDB://../Arria V SoC/Altera_DEV5XS1.rvc"/>
+<booleanAttribute key="connectOnly" value="true"/>
+<stringAttribute key="connection_type" value="USB-Blaster"/>
+<listAttribute key="debugger.view.DisassemblyView:current">
+<listEntry value="&lt;Next Instruction&gt;"/>
+<listEntry value="100"/>
+</listAttribute>
+<stringAttribute key="debugger.view.VariableTreeView:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;151&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;90&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;111&#9;-1&#9;true&#9;3&#9;true&#9;true&#9;42&#9;-1&#9;true&#9;4&#9;true&#9;true&#9;49&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;38&#9;-1&#9;true&#9;6&#9;true&#9;true&#9;61&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;52&#9;-1&#9;true"/>
+<listAttribute key="debugger.view.VariableTreeView:USER_ADDED_FILE_STATICS"/>
+<listAttribute key="debugger.view.VariableTreeView:USER_ADDED_GLOBALS"/>
+<booleanAttribute key="debugger.view.variable.DrawAsHex" value="false"/>
+<stringAttribute key="ds5_launch_configuration_version" value="5.28.1"/>
+<stringAttribute key="dtsl_config" value="USBBlaster_DtslScript"/>
+<stringAttribute key="dtsl_config_script" value="CDB://dtsl_config_script.py"/>
+<stringAttribute key="dtsl_options_file" value="default"/>
+<stringAttribute key="dtsl_tracecapture_option" value="options.traceBuffer.traceCapture"/>
+<stringAttribute key="eventviewer_tracesource" value="STM"/>
+<booleanAttribute key="linuxOS" value="false"/>
+<stringAttribute key="model_params" value=""/>
+<stringAttribute key="rddi_type" value="rddi-debug-rvi"/>
+<booleanAttribute key="runAfterConnect" value="false"/>
+<stringAttribute key="runTargetInitializationScript" value="${workspace_loc:/MyApp_MTL1/debug-nonhosted.ds}"/>
+<stringAttribute key="rvi_address" value="DE-SoC on localhost [USB-1]:DE-SoC USB-1"/>
+<mapAttribute key="scripts_view_script_links">
+<mapEntry key="C:\intelFPGA\18.0\embedded\ds-5\sw\debugger\configdb\Scripts\altera_target_check.py" value=""/>
+<mapEntry key="W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_MTL_sw\MyApp_MTL1\debug-nonhosted.ds" value=""/>
+<mapEntry key="W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_MTL1\debug-nonhosted.ds" value=""/>
+<mapEntry key="W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_MTL2\debug-nonhosted.ds" value=""/>
+<mapEntry key="W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_Test_sw\MyApp_mAbassi\debug-nonhosted.ds" value=""/>
+<mapEntry key="W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\Demo3\debug-nonhosted.ds" value=""/>
+<mapEntry key="W:\MesProjets\DE10-Nano\MyApps\MyApp_mAbassi\MyApp_mAbassi_sw\MyApp_mAbassi\debug-nonhosted.ds" value=""/>
+</mapAttribute>
+<listAttribute key="setup">
+<listEntry value="CDB://../../../Scripts/altera_debug_server.py"/>
+<listEntry value="CDB://rddi-dap_cfg-altera.txt rddi-dap_altera"/>
+</listAttribute>
+<stringAttribute key="target_initialization_script" value="CDB://../../../Scripts/altera_target_check.py"/>
+<stringAttribute key="watchpoints" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;watchpoints&gt;&#10;&lt;/watchpoints&gt;&#10;"/>
+</launchConfiguration>

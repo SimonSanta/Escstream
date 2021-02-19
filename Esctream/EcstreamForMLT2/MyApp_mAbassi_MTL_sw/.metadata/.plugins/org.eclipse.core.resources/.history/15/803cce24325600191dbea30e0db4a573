@@ -1,0 +1,235 @@
+#include <Const.h>
+#include "game.h"
+////
+#include <string.h>
+
+#include "mAbassi.h"          /* MUST include "SAL.H" and not uAbassi.h        */
+#include "Platform.h"         /* Everything about the target platform is here  */
+#include "HWinfo.h"           /* Everything about the target hardware is here  */
+#include "SysCall.h"          /* System Call layer stuff     */
+
+#include "arm_pl330.h"
+#include "dw_i2c.h"
+#include "cd_qspi.h"
+#include "dw_sdmmc.h"
+#include "dw_spi.h"
+#include "dw_uart.h"
+#include "alt_gpio.h"
+
+#include "gui.h"
+
+// #include "game.h"
+///
+
+
+int abs (int a) {
+	if (a>0) { return a; }
+	else { return -a; }
+}
+
+bool notcuty(LINE* line, PLAYER* player)
+{
+    if(line->interrupt==false){
+        return true;
+    }
+    else{
+        switch (line->dir){
+        case UP:
+            if(player->y+PLAYER_HEIGHT<line->stop_at)
+                return false;
+            else
+                return true;
+            break;
+        case DOWN:
+                return false;
+            break;
+        }
+    }
+}
+
+bool notcutx(LINE* line,PLAYER* player){
+    if(line->interrupt==false){
+        return true;
+    }
+    else{
+        switch (line->dir){
+        case LEFT:
+            if(player->x+PLAYER_WIDTH<line->stop_at)
+                return false;
+            else
+                return true;
+            break;
+        case RIGHT:
+                return false;
+            break;
+        }
+    }
+}
+
+bool success(LVL* lvl){
+    int nbr_succes=0;
+    for(int i=0;i<lvl->nbr_players;i++){
+      PLAYER* player=lvl->players+i;
+        if((player->fin_x<player->x+PLAYER_WIDTH && player->fin_x>player->x) && (player->fin_y<player->y+PLAYER_HEIGHT && player->fin_y>player->y)){
+        nbr_succes++;
+            printf("VICTORY condition\n");
+        }
+    }
+    return nbr_succes==lvl->nbr_players;
+}
+
+
+void pos_correlator(LVL *lvl){
+
+	// For each line of the level
+    for(int j=0; j<lvl->nbr_lines; j++)
+    {
+
+        LINE* line = lvl->lines+j;
+        bool no_interrupt[lvl->nbr_players]; //permet de remettre à false line->interrupt quand il n'y a plus d'interrupt
+
+        // For each player of the level
+        for(int i=0; i<lvl->nbr_players; i++)
+        {
+            PLAYER* player = lvl->players+i;
+            int lx = line->x;
+            int px = player->x;
+            int pxpw = player->x+PLAYER_WIDTH;
+            int lxlw = line->x+line->width;
+
+            no_interrupt[i] = true;
+
+            if ((lx>px && lx<pxpw) ||( lxlw >px && lxlw<pxpw))
+            {
+            	// Player is cutting a line of same color
+                if (line->color == player->color)
+                {
+                    if (notcuty(line,player))
+                    {
+                    	// Update defeat
+                    	*flag = (*flag) | 0x00000002;
+                    }
+                }
+                // Player is blocking a line of opposite color
+                else
+                {
+                	// Update line informations
+                    line->interrupt=true;
+                    no_interrupt[i]=false;
+                    if(line->dir==UP)
+                    {
+
+                        line->stop_at=player->y+PLAYER_HEIGHT;
+                    }
+                    else if(line->dir==DOWN)
+                    {
+                        line->stop_at=player->y;
+                    }
+                }
+           }
+           int ly=line->y;
+           int lylh=line->y+line->height;
+           int py=player->y;
+           int pyph=player->y+PLAYER_HEIGHT;
+
+           if((ly<pyph && ly>py) || (lylh>py && lylh <pyph ))
+           {
+        	    // Player is cutting a line of same color
+                if(line->color==player->color)
+                {
+                    if(notcutx(line,player))
+                    {
+                    	// Update defeat
+                    	*flag = (*flag) | 0x00000002;
+                    }
+                }
+                // Player is blocking a line of opposite color
+                else{
+                	// Update line informations
+                    line->interrupt=true;
+                    no_interrupt[i]=false;
+                    if(line->dir==LEFT){
+                        line->stop_at=player->x+PLAYER_WIDTH;
+                    }
+                    else if(line->dir==RIGHT){
+                        line->stop_at=player->x+PLAYER_HEIGHT;
+                    }
+                }
+            }
+        }
+        // No line interrupt
+        if(no_interrupt[0] && no_interrupt[1]){
+            line->interrupt=false;
+        }
+    }
+}
+
+
+void initimage(IMAGE* img, char name[], int height, int width)
+{
+
+	img = malloc(sizeof(IMAGE)); // a l endroit du pointeur img on vient allouer la place pour une structure IMAGE
+	img->name   = malloc(strlen(name)); // allouer la place a l'endroit du pointeur name
+	strcpy((*img).name,(const char*) &name); //on copie name dans (*img).name
+	img->height = height; // modifie la height
+    img->width  = width;  // modifie la width
+
+}
+
+ // char g_Buffer[3*width] __attribute__ ((aligned (OX_CACHE_LSIZE)));
+
+void suppressimage(IMAGE* img)
+{
+	free(img);
+}
+
+void displayimage(IMAGE *img, int offsetx, int offsety)
+{
+    // char name[] = img->name;
+	int width = img->width;
+
+	int height = img->height; // not used yet
+
+		uint32_t  *myFrameBuffer;
+
+	    char g_Buffer[3*width] __attribute__ ((aligned (OX_CACHE_LSIZE)));
+
+	 	SEM_t    *PtrSem;
+	 	int       FdSrc;
+	    int       Nrd;
+	    uint32_t  pixel;
+	    int       i;
+
+	    char theFileName[strlen((img->name)) +1];
+	    strcpy((char *) &theFileName, (img->name));
+
+	    PtrSem = SEMopen("MySem_DisplayFile");
+
+	    for( ;; )
+	    {
+	        SEMwait(PtrSem, -1);    // -1 = Infinite blocking
+	        SEMreset(PtrSem);
+
+	        FdSrc = open(theFileName, O_RDONLY, 0777);
+	        if (FdSrc >= 0) {
+	            myFrameBuffer = 0x20000000;
+
+	            myFrameBuffer += 800*offsety; // en y
+	            myFrameBuffer += offsetx; // en x
+
+	            do {
+	                Nrd = read(FdSrc, &g_Buffer[0], sizeof(g_Buffer));
+	                i=0;
+	                while(i < Nrd) {
+	                    *myFrameBuffer++ = (g_Buffer[i] << 16) + (g_Buffer[i+1] << 8) + g_Buffer[i+2];
+	                    i += 3;
+	                }
+	                myFrameBuffer += 800-width;
+
+	            } while (Nrd >= sizeof(g_Buffer));
+	            close(FdSrc);
+	            myFrameBuffer = 0x20000000;
+	        }
+	    }
+
+}

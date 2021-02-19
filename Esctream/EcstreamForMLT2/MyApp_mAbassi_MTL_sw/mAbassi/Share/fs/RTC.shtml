@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><title>RTC Control</title></head>
+<style>
+a {
+   text-decoration: none;
+}
+a:hover {
+   color:white;
+   text-decoration: underline;
+}
+</style>
+<body style="" lang="EN-US" link="orange" vlink="orange">
+<div style="margin-left: 30pt;">
+ <p style="text-align: center;" align="center"><span style="font-size: 24pt; font-family: Arial"><strong><!--#echo var="RTOS_ID" --> Webserver Demo</strong></span></p>
+ <div style="text-align: center;" align="center">
+  <hr align="center" size="2" width="100%">
+ </div>
+ <div align="center"><span style="font-weight: bold;"></span>
+  <table style="width: 500px; height: 30px;" border="1" cellpadding="2" cellspacing="2">
+   <tbody>
+    <tr>
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/default.shtml"><span style="color: white;">Home Page</span></a></small></td>
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/TaskList.shtml"><span style="color: white;">Task List</span></a></small></td>
+     <!--#if expr="$SHOW_LED_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/LED.shtml"><span style="color: white;">LED Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_LCD_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/LCD.shtml"><span style="color: white;">LCD Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_I2CC_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/I2C.shtml"><span style="color: white;">I2C Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_I2CS_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/I2Cstatus.shtml"><span style="color: white;">I2C Status</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_SW_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/Switches.shtml"><span style="color: white;">Switch Status</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_BUT_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/Buttons.shtml"><span style="color: white;">Button Status</span></a></small></td>
+     <!--#endif-->
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div align="center">
+  <table style="background: white none repeat scroll 0% 50%"; border="0" cellpadding="0" cellspacing="0" width="770">
+   <tbody>
+    <tr style="">
+     <td style="padding: 2.25pt;">
+      <table border="0" cellpadding="3" cellspacing="0" width="100%">
+       <tbody>
+        <tr>
+         <td valign="top" width="72%">
+<p><br><small><span style="font-family: Arial;">This page allows you to control the RTC located on the <!--#echo var="REMOTE_HOST" --> development board.</span></small></p>
+          <p>&nbsp;</p>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table style="width: 785px; color: white; height: 31px;" white="" color="" ;="" 100="" border="0" cellpadding="3" cellspacing="0">
+       <tbody>
+        <tr>
+         <td style="height: 15px; font-family: Arial; background-color: rgb(252, 57, 2);"><big><big><font size="-1"><big><big><strong>Control the RTC</strong></big></big></font></big></big></td>
+        </tr>
+       </tbody>
+      </table>
+      <div align="center">
+       <p><small><span style="font-family: Arial;">
+       <form action="/rtc.cgi" method="post">
+        Year: <input type="text" name="yr" size="4">
+        Month: <input type="text" name="mth" size="2">
+        Day: <input type="text" name="day" size="2">
+        Hours: <input type="text" name="hrs" size="2">
+        Minutes: <input type="text" name="min" size="2">
+        Seconds: <input type="text" name="sec" size="2"><br>
+        <br>
+        <input type="submit" value="Submit">
+       </form>
+       </span></small></p>
+      </div>
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</body>
+</html>

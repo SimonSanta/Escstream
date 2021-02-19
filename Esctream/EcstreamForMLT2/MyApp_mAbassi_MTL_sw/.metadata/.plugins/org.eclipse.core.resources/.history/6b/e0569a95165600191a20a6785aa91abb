@@ -1,0 +1,74 @@
+#include <Const.h>
+#include <stdlib.h>
+
+void new_player(LVL* level,int offset, int start_x, int start_y, int fin_x, int fin_y, int color){
+    PLAYER* player=level->players+offset;
+        player->start_x=start_x;
+        player->start_y=start_y;
+        player->fin_x=fin_x;
+        player->fin_y=fin_y;
+        player->color=color;
+        player->x=start_x;
+        player->y=start_y;
+}
+
+void new_line(LVL* level,int offset,int x, int y, int width, int height, DIR dir, int color){
+    LINE* line1 =level->lines+offset;
+        line1->x=x;
+        line1->y=y;
+        line1->width=width;
+        line1->height=height;
+        line1->color=color;
+        line1->interrupt=false;
+        line1->dir=dir;
+        line1->stop_at=0;
+}
+void free_lvl(LVL* lvl){
+    free(lvl->lines);
+    free(lvl->players);
+    free(lvl);
+}
+
+void reset_lvl(LVL* lvl,bool* victory, bool* defeat){
+	*victory=false;
+	*defeat=false;
+	for(int i=0;i<lvl->nbr_lines;i++){
+		LINE* line = lvl->lines+i;
+		line->interrupt=false;
+	}
+	for(int i=0;i<lvl->nbr_players;i++){
+		PLAYER* player = lvl->players+i;
+		player->x=player->start_x;
+		player->y=player->start_y;
+	}
+}
+void level(int lvl_number, LVL *lvl){
+    switch(lvl_number){
+        case 1:{
+            lvl->nbr_players=1;
+            lvl->nbr_lines=2;
+            lvl->lines=(LINE*) malloc((lvl->nbr_lines)*sizeof(LINE));
+            lvl->players=(PLAYER*) malloc((lvl->nbr_players)*sizeof(PLAYER));
+            new_line(lvl,0,220,DRAW_BORDER,39,DRAWRECT_HEIGHT,UP,BLACK);
+            new_line(lvl,1,DRAW_BORDER,300,DRAWRECT_WIDTH,39,LEFT,WHITE);
+            new_player(lvl,0,20,220,300,240,WHITE);
+         break;
+        }
+        case 2:{
+            lvl->nbr_players=2;
+            lvl->nbr_lines=2;
+            lvl->lines=(LINE*) malloc((lvl->nbr_lines)*sizeof(LINE));
+            lvl->players=(PLAYER*) malloc((lvl->nbr_players)*sizeof(PLAYER));
+            new_line(lvl,0,220,DRAW_BORDER,39,DRAWRECT_HEIGHT,UP,BLACK);
+            new_line(lvl,1,DRAW_BORDER,300,DRAWRECT_WIDTH,39,LEFT,WHITE);
+            new_player(lvl,0,20,220,350,380,WHITE);
+            new_player(lvl,1,300,380,20,40,BLACK);
+        break;
+        }
+        case 3:{
+        break;
+        }
+        default:
+        break;
+    }
+}

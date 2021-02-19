@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><title>Abassi Webserver</title></head>
+<style>
+a {
+   text-decoration: none;
+}
+a:hover {
+   color:white;
+   text-decoration: underline;
+}
+</style>
+<body style="" lang="EN-US" link="orange" vlink="orange">
+<div style="margin-left: 30pt;">
+ <p style="text-align: center;" align="center"><span style="font-size: 24pt; font-family: Arial"><strong><!--#echo var="RTOS_ID" --> Webserver Demo</strong></span></p>
+ <div style="text-align: center;" align="center">
+  <hr align="center" size="2" width="100%">
+ </div>
+ <div align="center"><span style="font-weight: bold;"></span>
+  <table style="width: 500px; height: 30px;" border="1" cellpadding="2" cellspacing="2">
+   <tbody>
+    <tr>
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/TaskList.shtml"><span style="color: white;">Task List</span></a></small></td>
+     <!--#if expr="$SHOW_LED_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/LED.shtml"><span style="color: white;">LED Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_LCD_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/LCD.shtml"><span style="color: white;">LCD Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_I2CC_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/I2C.shtml"><span style="color: white;">I2C Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_I2CS_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/I2Cstatus.shtml"><span style="color: white;">I2C Status</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_RTC_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/RTC.shtml"><span style="color: white;">RTC Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_SW_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/Switches.shtml"><span style="color: white;">Switch Status</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_BUT_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/Buttons.shtml"><span style="color: white;">Button Status</span></a></small></td>
+     <!--#endif-->
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div align="center">
+  <table style="background: white none repeat scroll 0% 50%"; border="0" cellpadding="0" cellspacing="0" width="770">
+   <tbody>
+    <tr style="">
+     <td style="padding: 2.25pt;">
+      <table border="0" cellpadding="3" cellspacing="0" width="100%">
+       <tbody>
+        <tr>
+         <td valign="top" width="72%">
+          <h1><span style="color: rgb(252, 57, 2); font-family: Arial;"><br>Code Time Technologies</span></h1>
+          <p><span style="font-size: 10pt; font-family: Arial;">Code Time Technologies delivers the next generation real-time kernel. We don't stop at simply supplying the same, generic features and functionality that every RTOS does. We add industry firsts like advanced priority inheritance, asymmetric round-robin scheduling, and starvation protection, and symmetric multicore. All in less memory than the base configuration of most kernels.</span></p>
+          <ul>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Available Symmetric Multiprocessing<o:p></o:p></span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Zero interrupt latency kernel<o:p></o:p></span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Intelligent starvation protection<o:p></o:p></span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Deadlock detection<o:p></o:p></span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Adaptive priority ceiling<o:p></o:p></span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">And much more...<o:p></o:p></span></li>
+          </ul>
+          <span style="font-size: 10pt; font-family: Arial;"><a style="font-weight: bold; color: rgb(252, 57, 2);" href="http://www.code-time.com" target="_blank">Visit the Code Time Technologies Website</a><br>&nbsp;</span>
+         </td>
+         <td align="right" valign="center" width="25%"><br>
+          <img style="width: 270px; PADDING-RIGHT: 20px" alt="" src="images/logo.png">
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table border="0" cellpadding="3" cellspacing="0" width="100%">
+       <tbody>
+        <tr style="">
+         <td style="padding: 2.25pt; background: rgb(252, 57, 2) none repeat scroll 0% 50%"; width="675">
+          <p><strong><span style="font-family: Arial; color: white;">&nbsp;About this demonstration</span></strong></p>
+         </td>
+        </tr>
+        <tr>
+         <td style="padding: 2.25pt; height: 11pt;" valign="top" width="675">
+          <p><span style="font-size: 10pt; font-family: Arial;">This package demonstrates a Webserver utilizing the lwIP TCP/IP stack Netconn and Socket APIs, and running on top of the advanced multicore real-time kernel from Code Time Technologies.
+           The Webserver fully supports the GET and POST methods/verbs, Server Side Includes (SSI) with HTTP environment variables, and Common Gateway Interface (CGI), all of which are extensively used in the demonstration.</span></p>
+          <p><span style="font-size: 10pt; font-family: Arial;">It also demonstrates the ability to serve dynamically updated webpages by providing an automatically updated view of the state of system tasks.</span></p>
+          <p><span style="font-size: 10pt; font-family: Arial;">The web pages themselves are served from either the &quot;in-memory&quot; file system or SD/MMC using FatFS.
+           And FatFS FAT32 support is demonstrated in a simple, yet feature rich, shell for interacting with the SD/MMC.</span></p>
+          <p><span style="font-size: 10pt; font-family: Arial;">Current demonstration configuration is:</span></p>
+          <ul type="disc">
+           <!--#if expr="$OS_DEMO = 9" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">FatFS shell</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 10" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Netconn with &quot;in-memory&quot; file system</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 11" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">BSD Socket with &quot;in-memory&quot; file system</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 12" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Netconn with SD/MMC FAT file system</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 13" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">BSD Socket with SD/MMC FAT file system</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 14" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Netconn with SD/MMC FatFS + SysCall layer</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 15" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">BSD Socket with SD/MMC FatFS + SysCall layer</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 16" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Netconn with SD/MMC FullFAT + SysCall layer</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 17" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">BSD Socket with SD/MMC FullFAT + SysCall layer</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 18" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Netconn with SD/MMC ueFAT + SysCall layer</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 19" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">BSD Socket with SD/MMC ueFAT + SysCall layer</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 110" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">CMSIS 3.0 RTOS API</span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Netconn with &quot;in-memory&quot; file system</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 111" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">CMSIS 3.0 RTOS API</span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">BSD Socket with &quot;in-memory&quot; file system</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 112" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">CMSIS 3.0 RTOS API</span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Netconn with SD/MMC FAT file system</span></li>
+           <!--#endif -->
+           <!--#if expr="$OS_DEMO = 113" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">CMSIS 3.0 RTOS API</span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">BSD Socket with SD/MMC FAT file system</span></li>
+           <!--#endif -->
+           <!--#if expr="$SHOW_LCD_PAGE = YES" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">LCD display control</span></li>
+           <!--#endif -->
+           <!--#if expr="$SHOW_LED_PAGE = YES" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">On-board LED control</span></li>
+           <!--#endif -->
+           <!--#if expr="$SHOW_I2CC_PAGE = YES" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">I2C device control</span></li>
+           <!--#endif -->
+           <!--#if expr="$SHOW_I2CS_PAGE = YES" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">I2C device display</span></li>
+           <!--#endif -->
+           <!--#if expr="$SHOW_SW_PAGE = YES" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">On-board switches status display</span></li>
+           <!--#endif -->
+           <!--#if expr="$SHOW_BUT_PAGE = YES" -->
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">On-board push buttons status display</span></li>
+           <!--#endif -->
+          </ul>
+         </td>
+         <td style="border-style: none; border-color: inherit; border-width: medium; padding: 0cm; height: 11pt;" width="4">
+          <p>&nbsp;</p>
+         </td>
+        </tr>
+        <tr style="">
+         <td style="padding: 2.25pt; background: rgb(252, 57, 2) none repeat scroll 0% 50%"; width="675">
+          <p><strong><span style="font-family: Arial; color: white;">&nbsp;About lwIP</span></strong></p>
+         </td>
+        </tr>
+        <tr>
+         <td style="padding: 2.25pt; height: 11pt;" valign="top" width="675">
+          <p><span style="font-size: 10pt; font-family: Arial;">The focus of the lwIP TCP/IP implementation is to reduce resource usage while still having full scale TCP.</span></p> 
+          <p><span style="font-size: 10pt; font-family: Arial;">Main features include:</span></p>
+          <ul type="disc">
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Protocols: IP, ICMP, UDP, TCP, IGMP, ARP, PPPoS, PPPoE</span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">DHCP client, DNS client, AutoIP/APIPA (Zeroconf), SNMP agent (private MIB support)</span></li>
+          </ul>
+         </td>
+        </tr>
+        <tr style="">
+         <td style="padding: 2.25pt; background: rgb(252, 57, 2) none repeat scroll 0% 50%"; width="675">
+          <p><strong><span style="font-family: Arial; color: white;">&nbsp;About FatFs</span></strong></p>
+         </td>
+        </tr>
+        <tr style="">
+         <td style="padding: 2.25pt; height: 11pt;" valign="top" width="675">
+          <p><span style="font-size: 10pt; font-family: Arial;">FatFs is a generic FAT file system module for small embedded systems.</span></p> 
+          <p><span style="font-size: 10pt; font-family: Arial;">Main features include:</span></p>
+          <ul type="disc">
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Windows compatible FAT file system</span></li>
+           <li style=""><span style="font-size: 10pt; font-family: Arial;">Very small footprint for code and work area</span></li>
+          </ul>
+          <p>&nbsp;</p>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div align="center">
+  <table style="background: black none repeat scroll 0% 50%;" border="0" cellpadding="0" cellspacing="0" width="770">
+   <tbody>
+    <tr style="">
+     <td style="padding: 0cm; width: 100%;">
+      <p><img border="0" height="1"></p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p style="text-align: center;" align="center"><span style="display: none;">&nbsp;</span></p>
+ <div align="center">
+  <table style=border="0" cellpadding="0" cellspacing="0" width="770">
+   <tbody>
+    <tr style="">
+     <td style="padding: 0cm; width: 100%;">
+      <div>
+       <p style="font-size: 10pt; font-family: Arial;">Code Time Technologies Inc. &copy; 2013-2019</p>
+      </div>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+</body>
+</html>

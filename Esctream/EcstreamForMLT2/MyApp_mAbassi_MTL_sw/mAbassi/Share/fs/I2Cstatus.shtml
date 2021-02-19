@@ -1,0 +1,215 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><title>I2C Status</title></head>
+<meta http-equiv="refresh" content="1" >
+<style>
+a {
+   text-decoration: none;
+}
+a:hover {
+   color:white;
+   text-decoration: underline;
+}
+</style>
+<body style="" lang="EN-US" link="orange" vlink="orange">
+<div style="margin-left: 30pt;">
+ <p style="text-align: center;" align="center"><span style="font-size: 24pt; font-family: Arial"><strong><!--#echo var="RTOS_ID" --> Webserver Demo</strong></span></p>
+ <div style="text-align: center;" align="center">
+  <hr align="center" size="2" width="100%">
+ </div>
+ <div align="center"><span style="font-weight: bold;"></span>
+  <table style="width: 500px; height: 30px;" border="1" cellpadding="2" cellspacing="2">
+   <tbody>
+    <tr>
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/default.shtml"><span style="color: white;">Home Page</span></a></small></td>
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/TaskList.shtml"><span style="color: white;">Task List</span></a></small></td>
+     <!--#if expr="$SHOW_LED_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/LED.shtml"><span style="color: white;">LED Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_LCD_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/LCD.shtml"><span style="color: white;">LCD Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_I2CC_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/I2C.shtml"><span style="color: white;">I2C Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_RTC_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/RTC.shtml"><span style="color: white;">RTC Control</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_SW_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/Switches.shtml"><span style="color: white;">Switch Status</span></a></small></td>
+     <!--#endif-->
+     <!--#if expr="$SHOW_BUT_PAGE = YES" -->
+     <td style="font-family: Arial; font-weight: bold; background-color: rgb(252, 57, 2); text-align: center;"><small><a href="/Buttons.shtml"><span style="color: white;">Button Status</span></a></small></td>
+     <!--#endif-->
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div align="center">
+  <table style="background: white none repeat scroll 0% 50%"; border="0" cellpadding="0" cellspacing="0" width="770">
+   <tbody>
+    <tr style="">
+     <td style="padding: 2.25pt;">
+      <table border="0" cellpadding="3" cellspacing="0" width="100%">
+       <tbody>
+        <tr>
+         <td valign="top" width="72%">
+<p><br><small><span style="font-family: Arial;">This page allows you to display the status of devices connected via I2C on the <!--#echo var="REMOTE_HOST" --> development board.</span></small></p>
+          <p>&nbsp;</p>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+
+      <div align="center">
+       <small><span style="font-family: Arial;">
+        <!--#if expr="$SHOW_RTC = YES" -->
+        Webserver Time:&nbsp;<!--#echo var="DATE_LOCAL" --><br>
+        <!--#endif -->
+        System Uptime:&nbsp;<!--#echo var="UP_TIME" --><br>
+        <br><br>
+       </span></small>
+      </div>
+
+      <!--#if expr="$SHOW_ACC = YES" -->
+      <table style="width: 785px; color: white; height: 31px;" white="" color="" ;="" 100="" border="0" cellpadding="3" cellspacing="0">
+       <tbody>
+        <tr>
+         <td style="height: 15px; font-family: Arial; background-color: rgb(252, 57, 2);"><big><big><font size="-1"><big><big><strong>Status of the Accelerometer</strong></big></big></font></big></big></td>
+        </tr>
+       </tbody>
+      </table>
+      <!--#endif -->
+      <!--#if expr="$SHOW_ACC = YES" -->
+      <div style="text-align:center; line-height: 3px">
+      <!--#else -->
+      <div style="text-align:center; display:none">
+ 	  <!--#endif -->
+       <p><span style="font-family: Arial;">
+        <pre>X Axis:&nbsp;<!--#echo var="ACCEL_X" --></pre>
+        <pre>Y Axis:&nbsp;<!--#echo var="ACCEL_Y" --></pre>
+        <pre>Z Axis:&nbsp;<!--#echo var="ACCEL_Z" --></pre>
+       </span></p>
+      </div>
+
+      <!--#if expr="$SHOW_ADC = YES" -->
+      <table style="width: 785px; color: white; height: 31px;" white="" color="" ;="" 100="" border="0" cellpadding="3" cellspacing="0">
+       <tbody>
+        <tr>
+         <td style="height: 15px; font-family: Arial; background-color: rgb(252, 57, 2);"><big><big><font size="-1"><big><big><strong>Status of the ADC</strong></big></big></font></big></big></td>
+        </tr>
+       </tbody>
+      </table>
+      <!--#endif -->
+      <!--#if expr="$SHOW_ADC = YES" -->
+      <div style="text-align:center; line-height: 3px">
+      <!--#else -->
+      <div style="text-align:center; display:none">
+	  <!--#endif -->
+       <p><span style="font-family: Arial;">
+	  <!--#if expr="$SHOW_ADC_0 = YES" -->
+        <pre>ADC #0 :&nbsp;<!--#echo var="ADC_0" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_1 = YES" -->
+        <pre>ADC #1 :&nbsp;<!--#echo var="ADC_1" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_2 = YES" -->
+        <pre>ADC #2 :&nbsp;<!--#echo var="ADC_2" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_3 = YES" -->
+        <pre>ADC #3 :&nbsp;<!--#echo var="ADC_3" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_4 = YES" -->
+        <pre>ADC #4 :&nbsp;<!--#echo var="ADC_4" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_5 = YES" -->
+        <pre>ADC #5 :&nbsp;<!--#echo var="ADC_5" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_6 = YES" -->
+        <pre>ADC #6 :&nbsp;<!--#echo var="ADC_6" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_7 = YES" -->
+        <pre>ADC #7 :&nbsp;<!--#echo var="ADC_7" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_8 = YES" -->
+        <pre>ADC #8 :&nbsp;<!--#echo var="ADC_8" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_9 = YES" -->
+        <pre>ADC #9 :&nbsp;<!--#echo var="ADC_9" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_10 = YES" -->
+        <pre>ADC #10:&nbsp;<!--#echo var="ADC_10" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_11 = YES" -->
+        <pre>ADC #11:&nbsp;<!--#echo var="ADC_11" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_12 = YES" -->
+        <pre>ADC #12:&nbsp;<!--#echo var="ADC_12" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_13 = YES" -->
+        <pre>ADC #13:&nbsp;<!--#echo var="ADC_13" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_14 = YES" -->
+        <pre>ADC #14:&nbsp;<!--#echo var="ADC_14" --></pre>
+      <!--#endif -->
+	  <!--#if expr="$SHOW_ADC_15 = YES" -->
+        <pre>ADC #15:&nbsp;<!--#echo var="ADC_15" --></pre>
+      <!--#endif -->
+       </span></p>
+      </div>
+
+      <!--#if expr="$SHOW_TEMP = YES" -->
+      <table style="width: 785px; color: white; height: 31px;" white="" color="" ;="" 100="" border="0" cellpadding="3" cellspacing="0">
+       <tbody>
+        <tr>
+         <td style="height: 15px; font-family: Arial; background-color: rgb(252, 57, 2);"><big><big><font size="-1"><big><big><strong>Status of the Temperature Sensor</strong></big></big></font></big></big></td>
+        </tr>
+       </tbody>
+      </table>
+      <!--#endif -->
+      <!--#if expr="$SHOW_TEMP = YES" -->
+      <div style="text-align:center; line-height: 3px">
+      <!--#else -->
+      <div style="text-align:center; display:none">
+	  <!--#endif -->
+       <p><span style="font-family: Arial;">
+	    <!--#if expr="$SHOW_TEMP_0 = YES" -->
+         <pre>Temperature #0:&nbsp;<!--#echo var="TEMP_0" -->&nbsp;&deg;F</pre>
+        <!--#endif -->
+	    <!--#if expr="$SHOW_TEMP_1 = YES" -->
+         <pre>Temperature #1:&nbsp;<!--#echo var="TEMP_1" -->&nbsp;&deg;F</pre>
+        <!--#endif -->
+	    <!--#if expr="$SHOW_TEMP_2 = YES" -->
+         <pre>Temperature #2:&nbsp;<!--#echo var="TEMP_2" -->&nbsp;&deg;F</pre>
+        <!--#endif -->
+	    <!--#if expr="$SHOW_TEMP_3 = YES" -->
+         <pre>Temperature #3:&nbsp;<!--#echo var="TEMP_3" -->&nbsp;&deg;F</pre>
+        <!--#endif -->
+	    <!--#if expr="$SHOW_TEMP_4 = YES" -->
+         <pre>Temperature #4:&nbsp;<!--#echo var="TEMP_4" -->&nbsp;&deg;F</pre>
+        <!--#endif -->
+	    <!--#if expr="$SHOW_TEMP_5 = YES" -->
+         <pre>Temperature #5:&nbsp;<!--#echo var="TEMP_5" -->&nbsp;&deg;F</pre>
+        <!--#endif -->
+	    <!--#if expr="$SHOW_TEMP_6 = YES" -->
+         <pre>Temperature #6:&nbsp;<!--#echo var="TEMP_6" -->&nbsp;&deg;F</pre>
+        <!--#endif -->
+	    <!--#if expr="$SHOW_TEMP_7 = YES" -->
+         <pre>Temperature #7:&nbsp;<!--#echo var="TEMP_7" -->&nbsp;&deg;F</pre>
+        <!--#endif -->
+	    <!--#if expr="$SHOW_TEMP_8 = YES" -->
+         <pre>Temperature #8:&nbsp;<!--#echo var="TEMP_8" -->&nbsp;&deg;F</pre>
+        <!--#endif -->
+	    <!--#if expr="$SHOW_TEMP_9 = YES" -->
+         <pre>Temperature #9:&nbsp;<!--#echo var="TEMP_9" -->&nbsp;&deg;F</pre>
+        <!--#endif -->
+       </span></p>
+      </div>
+      <!--#endif -->
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</body>
+</html>

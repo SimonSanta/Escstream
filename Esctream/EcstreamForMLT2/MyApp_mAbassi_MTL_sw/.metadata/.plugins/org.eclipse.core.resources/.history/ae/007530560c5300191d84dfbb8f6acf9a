@@ -1,0 +1,361 @@
+// --------------------------------------------------------------------
+// Copyright (c) 2011 by Terasic Technologies Inc. 
+// --------------------------------------------------------------------
+//
+// Permission:
+//
+//   Terasic grants permission to use and modify this code for use
+//   in synthesis for all Terasic Development Boards and Altera Development 
+//   Kits made by Terasic.  Other use of this code, including the selling 
+//   ,duplication, or modification of any portion is strictly prohibited.
+//
+// Disclaimer:
+//
+//   This VHDL/Verilog or C/C++ source code is intended as a design reference
+//   which illustrates how these types of functions can be implemented.
+//   It is the user's responsibility to verify their design for
+//   consistency and functionality through the use of formal
+//   verification methods.  Terasic provides no warranty regarding the use 
+//   or functionality of this code.
+//
+// --------------------------------------------------------------------
+//           
+//                     Terasic Technologies Inc
+//                     356 Fu-Shin E. Rd Sec. 1. JhuBei City,
+//                     HsinChu County, Taiwan
+//                     302
+//
+//                     web: http://www.terasic.com/
+//                     email: support@terasic.com
+//
+// --------------------------------------------------------------------
+
+
+#include "terasic_includes.h"
+#include "gui.h"
+#include "vip_fr.h"
+#include "multi_touch2.h"
+#include "simple_graphics.h"
+#include "geometry.h"
+#include "gesture.h"
+#include "Const.h"
+#include "level.h"
+#include "game.h"
+#include "queue.h"
+#include "fonts.h"
+
+#include "SysCall.h"          /* System Call layer stuff     */
+
+//#define ENALBE_TOUCH_FILTER
+#define DUAL_FRAME_BUFFER
+
+#define FR_FRAME_0  0x20000000
+#define FR_FRAME_1 (0x20000000 + FRAME_WIDTH*FRAME_HEIGHT*4)
+
+#define FRAME_WIDTH  800
+#define FRAME_HEIGHT 480
+#define DOT_SIZE     6
+
+//#define VALID_POINT(x,y) (((x)>=DOT_SIZE && (x)<FRAME_WIDTH-DOT_SIZE && (y)>=DOT_SIZE && (y)<FRAME_HEIGHT-DOT_SIZE)?TRUE:FALSE)
+
+alt_u32 szPallete[] = {
+    BLACK_24,
+    WHITE_24,
+    0xFFFFFF,
+    0x0000FF,
+    0x00FF00,
+    0xFF0000,
+    0x00FFFF,
+    0xFFFF00,
+    0xFF00FF,
+    //0x7F7F7F
+};
+
+typedef enum{
+    BTN_GESTRUE = 0,
+    BTN_CLEAR,
+    BTN_WHITE,
+    BTN_BLUE,
+    BTN_GREEN,
+    BTN_RED,
+    BTN_SKY,
+    BTN_YELLOW,
+    BTN_PINK,
+    //BTN_GRAY,
+    BTN_NUM,
+    
+    BTN_NONE
+}BUTTON_ID;
+
+typedef struct{
+    RECT rc;
+    int  color;
+}PALETTE_INFO;
+
+typedef struct{
+	RECT rcPaint;		// Drawing area
+}DESK_INFO;
+
+void GUI_DeskInit(VIP_FRAME_READER *pReader, DESK_INFO *pDeskInfo, LVL *lvl, int lvl_num){
+
+    RectSet(&pDeskInfo->rcPaint, DRAW_BORDER, pReader->width-DRAW_BORDER, DRAW_BORDER, pReader->height-2*DRAW_BORDER-MENU_HEIGHT);
+    level(lvl_num, lvl);
+    
+}
+
+void GUI_DeskDraw(VIP_FRAME_READER *pReader, DESK_INFO *pDeskInfo, LVL *lvl){
+    RECT rc;
+
+    // draw border of drawing area
+    RectCopy(&rc, &pDeskInfo->rcPaint);
+    vid_draw_box(rc.left, rc.top, rc.right, rc.bottom, WHITE_24, DO_NOT_FILL, pReader);
+
+    // draw menu
+    vid_draw_box(rc.left, rc.bottom+DRAW_BORDER, rc.right, rc.bottom+DRAW_BORDER+MENU_HEIGHT, WHITE_24, DO_FILL, pReader);
+    char string[] = "menu";
+    vid_print_string(SCREEN_WIDTH/2, rc.bottom+20, BLACK_24, tahomabold_20, pReader, string);
+
+    // Plot lines
+    for(int i=0;i<lvl->nbr_lines;i++)
+    {
+    	LINE* line = lvl->lines+i;
+    	if (line->interrupt)
+    	{
+    		switch (line->dir){
+    		case UP:
+    			vid_draw_box(line->x, line->stop_at, line->x+line->width, line->y+line->height, line->color, DO_FILL, pReader);
+    			break;
+    		case DOWN:
+    			vid_draw_box(line->x, line->y, line->x+line->width, line->stop_at, line->color, DO_FILL, pReader);
+    			break;
+    		case LEFT:
+    			vid_draw_box(line->stop_at, line->y, line->x+line->width, line->y+line->height, line->color, DO_FILL, pReader);
+    			break;
+    		case RIGHT:
+    			vid_draw_box(line->x, line->y, line->stop_at, line->y+line->height, line->color, DO_FILL, pReader);
+    			break;
+    		}
+    	}
+    	else{
+    		vid_draw_box(line->x, line->y, line->x+line->width, line->y+line->height, line->color, DO_FILL, pReader);
+    	}
+    }
+    // Plot player at their start positions + plot their target position
+    for(int j=0;j<lvl->nbr_players;j++)
+    {
+    	PLAYER* player=lvl->players+j;
+        vid_draw_box(player->x, player->y, player->x+39, player->y+39, player->color, DO_FILL, pReader);
+        vid_draw_box(player->fin_x, player->fin_y, player->fin_x+39, player->fin_y+39, player->color, DO_NOT_FILL, pReader);
+    }
+        
+}
+
+bool IsContinuedPoint(POINT *ptPre, POINT *ptNew){
+    bool bYes = TRUE;
+    const int nMax = 50;
+    if (abs(ptPre->x - ptNew->x) > nMax)
+        bYes = FALSE;
+    else if (abs(ptPre->y - ptNew->y) > nMax)
+        bYes = FALSE;
+        
+    return bYes;        
+        
+}
+
+// Move player towards direction of touched point (X, Y) by 10px
+// (record changes in the LVL structure)
+void incrCoordinate(PLAYER *plyr, int X, int Y) {
+
+	int dist_x = X-plyr->x;
+	int dist_y = Y-plyr->y;
+
+	// Horizontal move
+	if (abs(dist_x) > abs(dist_y)) {
+		// Right
+		if (dist_x > 0) {
+			printf("Horizontal right move\n");
+			plyr->x = plyr->x+10;
+		}
+		// Left
+		else {
+			printf("Horizontal left move\n");
+			plyr->x = plyr->x-10;
+		}
+	}
+	// Vertical move
+	else {
+		// Down
+		if (dist_y > 0) {
+			printf("Vertical down move\n");
+			plyr->y = plyr->y+10;
+		}
+		// Up
+		else {
+			printf("Vertical up move\n");
+			plyr->y = plyr->y-10;
+		}
+	}
+}
+
+void GUI_checkNDraw(LVL *lvl, VIP_FRAME_READER *pReader, DESK_INFO *DeskInfo, bool *defeat, bool *victory) {
+	// 1. Check if player has crushed a line
+	//	 (records line changes in the LVL structure + update defeat if necessary)
+	pos_correlator(lvl, defeat);
+
+	// 2. Check if victory of both players
+	*victory = success(lvl);
+
+	// 3. Redraw whole screen according to changes in the LVL structure
+	vid_clean_screen(pReader, 0x8B0000);
+	GUI_DeskDraw(pReader, DeskInfo, lvl);
+	VIPFR_ActiveDrawFrame(pReader);
+}
+
+void setCoordinate(PLAYER *plyr, uint16_t X, uint16_t Y){
+	plyr->x = X;
+	plyr->y = Y;
+}
+
+/*
+bool menuTouched(int X, int Y) {
+	if (X < DRAW_BORDER + DRAWRECT_WIDTH)
+}
+*/
+
+void GUI(MTC2_INFO *pTouch, int lvl_num, bool *GO){
+    // video
+    static InitFlag = true;
+    static DESK_INFO DeskInfo;
+    static VIP_FRAME_READER *pReader;
+    static LVL lvl;
+    static uint16_t X1, Y1;
+    static uint16_t XR, YR;
+    static POINT Pt1, Pt2, Pt3, Pt4, Pt5, ptGesture, PtR;
+    static alt_u8 Event, TouchNum;
+    static const int nDotSize = DOT_SIZE;
+    static RECT rcTouch;
+    static int ColorPen0, ColorPen1, ColorPen2,ColorPen3,ColorPen4,ButtonId, ButtonId2,ButtonId3,ButtonId4,ButtonId5;
+    static bool UpdatePalette;
+    static bool defeat;
+    static bool victory;
+#ifdef ENALBE_TOUCH_FILTER    
+    static POINT LastPt1, LastPt2;
+    static alt_u32 LastTimePt1=0,LastTimePt2=0;
+    static const alt_u32 ContinuedTime = alt_ticks_per_second()/50;
+#endif
+
+    if (InitFlag) {
+    
+        #ifdef DUAL_FRAME_BUFFER
+            pReader =  VIPFR_Init((alt_u32 *)(ALT_LWFPGASLVS_OFST + ALT_VIP_VFR_0_BASE), (void *)FR_FRAME_0, (void *)FR_FRAME_1, FRAME_WIDTH, FRAME_HEIGHT);
+        #else
+            pReader =  VIPFR_Init((alt_u32 *)(ALT_LWFPGASLVS_OFST + ALT_VIP_VFR_0_BASE), (void *)FR_FRAME_0, (void *)FR_FRAME_0, FRAME_WIDTH, FRAME_HEIGHT);
+        #endif // DUAL_FRAME_BUFFER
+        VIPFR_Go(pReader, TRUE);
+    
+        // clean screen
+        vid_clean_screen(pReader, 0x8B0000);
+    
+        GUI_DeskInit(pReader, &DeskInfo, &lvl, lvl_num); // Sets the infos inside the DESK_INFO structure (rcPaint)
+        GUI_DeskDraw(pReader, &DeskInfo, &lvl); // Draws the drawable area
+    
+        VIPFR_ActiveDrawFrame(pReader);
+    
+        RectCopy(&rcTouch, &DeskInfo.rcPaint);
+        RectInflate(&rcTouch, -nDotSize-2, -nDotSize-2);
+        
+        InitFlag = false;
+    }
+    
+    defeat = false;
+    victory = false;
+
+    // While game hasn't ended
+    while (*GO)
+    {
+    	// When touch event, moves the player 1 towards the touched position
+
+    	if (MTC2_GetStatus(pTouch, &Event, &TouchNum, &X1, &Y1))
+        {
+          	printf("GUI: Touch event detected\n");
+
+            PtSet(&Pt1, X1, Y1);
+
+            if (TouchNum >= 1 && IsPtInRect(&Pt1, &rcTouch))
+           	{
+
+            	PLAYER *ownPlyr = (&lvl)->players;	// Resp players+1 for other board
+
+            	incrCoordinate(ownPlyr, X1, Y1);
+        		GUI_checkNDraw(&lvl, pReader, &DeskInfo, &defeat, &victory);
+
+            	// Coordinate of our own player after touch event has been treated
+            	uint32_t XS = ownPlyr->x;
+            	uint32_t YS = ownPlyr->y;
+
+        		printf("GUI: xcoord sent = %d\n", XS);
+        		printf("GUI: ycoord sent = %d\n", YS);
+
+            	MTX_t	*TMtx = MTXopen("TXData Mtx");
+            	MTXlock(TMtx, -1);
+
+            	*txdata =  (XS << 16) | YS;
+            	printf("Wrote new msg in txdata: %d\n", *txdata);
+
+                MTXunlock(TMtx);
+           	}
+
+        	MTC2_ClearEvent(pTouch);
+        }
+
+        // When SPI event (i.e. received msg from other board)
+    	// Moves the player 2 towards the touched position
+
+        if(SPI_GetStatus(&XR, &YR)){
+
+        	printf("GUI: Position received: X = %d, Y = %d\n", XR, YR);
+        	PtSet(&PtR, XR, YR);
+
+        	if (IsPtInRect(&PtR, &rcTouch))
+        	{
+        		PLAYER *otherPlyr = (&lvl)->players+1;	// Resp players for other board
+
+        		setCoordinate(otherPlyr, XR, YR);
+        		GUI_checkNDraw(&lvl, pReader, &DeskInfo, &defeat, &victory);
+        	}
+        }
+
+        if (defeat) {
+        	printf("DEFEAT\r\n");
+        	*GO = false;
+        }
+        if (victory) {
+        	printf("VICTORY\r\n");
+        	*GO = false;
+        }
+    }
+}
+
+// Mutex-handled access to lastMsg (returns true if other player position has changed)
+bool SPI_GetStatus(uint16_t *XR, uint16_t *YR){
+	bool bChange = false;
+
+	static uint16_t PrevX = 0;
+	static uint16_t PrevY = 0;
+
+	MTX_t *RMtx = MTXopen("RXData Mtx");
+	MTXlock(RMtx, -1);
+
+	if ((*XR!=*PX)|(*YR!=*PY)) {
+		printf("SPI_GetStatus: treating last received msg\n");
+		*XR = lastMsg->xcoord;
+		*YR = lastMsg->ycoord;
+		*PX = *XR;
+		*PY = *YR;
+		bChange = true;
+	}
+
+	MTXunlock(RMtx);
+
+	return bChange;
+}

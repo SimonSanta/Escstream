@@ -1,0 +1,12 @@
+19:47:26 **** Incremental Build of configuration Default for project MyApp_CAN ****
+make all 
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I C:/intelFPGA/18.0/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.0/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DSPI_DEBUG=0 -DSPI_OPERATION=0x10000 -DSPI_USE_MUTEX=1 -DUART_FULL_PROTECT=1 -D soc_cv_av -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../src/Main_mAbassi.c -o Main_mAbassi.o
+"arm-altera-eabi-g++" -Wl,--gc-sections  -Wl,-L../../mAbassi/Platform/lib -Xlinker -Map -Xlinker Demo_100_SMP_DE0NANOSOC_A9_GCC.map 			\
+      -T ../../mAbassi/AR5_CY5.ld  Main_mAbassi.o MyApp_CAN.o MyDriver_CAN.o SysCall_noFS.o TIMERinit.o alt_gpio.o dw_spi.o dw_uart.o alt_generalpurpose_io.o mAbassiCfgA9.o Shell.o SubShell.o   -Wl,-l_mAbassi_EVAL_GCC_AR5_CY5 -Wl,-lcs3 -Wl,-lcs3unhosted -Wl,-lcs3arm					\
+          -Wl,-lgcc -Wl,-lc -o Demo_100_SMP_DE0NANOSOC_A9_GCC.axf
+"arm-altera-eabi-nm" Demo_100_SMP_DE0NANOSOC_A9_GCC.axf > Demo_100_SMP_DE0NANOSOC_A9_GCC.axf.map
+"arm-altera-eabi-objcopy" Demo_100_SMP_DE0NANOSOC_A9_GCC.axf -j vectors -j .rodata -j .text -j .data -j .bss --output-target=binary Demo_100_SMP_DE0NANOSOC_A9_GCC.bin
+Done
+
+19:47:30 Build Finished (took 4s.422ms)
+

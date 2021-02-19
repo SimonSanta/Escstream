@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MyApp_MTL1/MyApp_MTL2_GCC.make&apos; to &apos;MyApp_MTL1_GCC.make&apos;" description="Rename resource &apos;MyApp_MTL2_GCC.make&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MyApp_MTL2_GCC.make" name="MyApp_MTL1_GCC.make" stamp="1552227673786" updateReferences="true"/>
+</session>
