@@ -4,6 +4,11 @@ Escstream, Cooperative Wireless Embeded Circuits Video game.
 Feb 2018 – Jun 2019
 
 
+![Capture2](https://user-images.githubusercontent.com/17762123/120939633-3effe680-c719-11eb-84c3-6b2fedd9f409.PNG)
+![Capture3](https://user-images.githubusercontent.com/17762123/120939638-43c49a80-c719-11eb-82fb-88feb286c53d.PNG)
+
+
+
 Project in the scope of the course of Design of Embedded and real-time systems from UCLouvain. 
 
 Tasks: Per group of 4 the goal was to create from scratch a real time, synchronised cooperative puzzle game using a pair of DE10-Nano, MyPi-Nano and  Multi-Touch Screen.
