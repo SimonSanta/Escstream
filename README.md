@@ -1,6 +1,6 @@
 # Escstream
 
-Escstream, Multithreaded Real time Cooperative Wireless Embeded Circuits Video game.
+Escstream, Multithreaded Real time Cooperative Wireless Embedded Circuits Video game.
 Feb 2018 – Jun 2019
 
 
